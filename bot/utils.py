@@ -1,4 +1,5 @@
-from aiogram.types import Message, ReplyKeyboardMarkup, KeyboardButton, InputFile
+from aiogram.types import Message, ReplyKeyboardMarkup, KeyboardButton, InputFile, User
+from aiogram import Dispatcher
 from setting import IMAGES_DIR
 
 async def send_message(message: Message, msg_option: dict):
@@ -25,7 +26,14 @@ def build_keyboard(args: dict):
         return None
     keyboard = ReplyKeyboardMarkup(
         resize_keyboard=True, one_time_keyboard=True)
-    # register_user_handle(keyboard_args)
+    register_user_choices(keyboard_args)
     for keyboard_item in keyboard_args:
         keyboard.add(KeyboardButton(keyboard_item["text"]))
     return keyboard
+
+
+def register_user_choices(kb_args: dict):
+    user_id = str(User.get_current().id)
+    users = Dispatcher.get_current().data["users"]
+    users[user_id]["registered_messages"] = [x["text"] for x in kb_args]
+    users[user_id]["registered_answers_id"] = [x["answer_id"] for x in kb_args]
