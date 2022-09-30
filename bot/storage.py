@@ -13,5 +13,5 @@ async def save_data(file_name: str, data: dict):
     async with aiofiles.open(
         f"{STORAGE_DIR}/{file_name}.json", mode="w", encoding="utf8"
     ) as fp:
-        saving_data = json.dumps(data)
+        saving_data = json.dumps(data, ensure_ascii=False)
         await fp.write(saving_data)
