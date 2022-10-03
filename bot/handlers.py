@@ -24,10 +24,8 @@ async def echo(message: Message):
         await start(message)
         await bot.delete_message(message.chat.id, message.message_id)
         return
-    users[user_id] = {
-        "registered_messages": users[user_id].get("registered_messages", []),
-        "last_choiced_option": users[user_id].get("last_choiced_option", "1"),
-    }
+    users[user_id].setdefault("registered_messages", [])
+    users[user_id].setdefault("last_choiced_option", "1")
     if message.text not in users[user_id]["registered_messages"]:
         # test print if message not in user pool (need replace to Exception)
         await bot.delete_message(message.chat.id, message.message_id)
