@@ -28,8 +28,8 @@ def build_keyboard(args: dict):
     keyboard_args = args.get("keyboard", None)
     if keyboard_args is None:
         return None
-    keyboard = ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True)
     register_user_choices(keyboard_args)
+    keyboard = ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True)
     for keyboard_item in keyboard_args:
         keyboard.add(KeyboardButton(keyboard_item["text"]))
     return keyboard
