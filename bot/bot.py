@@ -1,5 +1,4 @@
 from aiogram import executor, Dispatcher, Bot
-from aiogram.types import Message
 from setting import BOT_KEY
 from storage import load_data, save_data
 from handlers import start, echo
