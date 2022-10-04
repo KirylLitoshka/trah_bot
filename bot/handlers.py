@@ -26,12 +26,15 @@ async def echo(message: Message):
         return
     users[user_id].setdefault("registered_messages", [])
     users[user_id].setdefault("last_choiced_option", "1")
+    users[user_id].setdefault("relationship", 0)
     if message.text not in users[user_id]["registered_messages"]:
-        # test print if message not in user pool (need replace to Exception)
         await bot.delete_message(message.chat.id, message.message_id)
         return
     else:
         choice_index = users[user_id]["registered_messages"].index(message.text)
+        if len(users[user_id]["registered_messages"]) > 1 :
+            relation_choice_value = -1 if choice_index == 0 else 1
+            users[user_id]["relationship"] += relation_choice_value
         users[user_id]["last_choiced_option"] = users[user_id]["registered_answers_id"][choice_index]
     await send_message(message, options[users[user_id]["last_choiced_option"]])
-    # await message.answer(message.text)
+
