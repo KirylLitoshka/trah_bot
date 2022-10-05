@@ -26,17 +26,20 @@ async def send_message(message: Message, msg_option: dict):
 
 def build_keyboard(args: dict):
     keyboard_args = args.get("keyboard", None)
+    check_relationship = args["check_relationship"]
     if keyboard_args is None:
-        return None
-    register_user_choices(keyboard_args)
+        return
+    register_user_choices(check_relationship, keyboard_args)
     keyboard = ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True)
     for keyboard_item in keyboard_args:
         keyboard.add(KeyboardButton(keyboard_item["text"]))
     return keyboard
 
 
-def register_user_choices(kb_args: dict):
+def register_user_choices(check_relationship: bool, keyboard_data: list):
     user_id = str(User.get_current().id)
     users = Dispatcher.get_current().data["users"]
-    users[user_id]["registered_messages"] = [x["text"] for x in kb_args]
-    users[user_id]["registered_answers_id"] = [x["answer_id"] for x in kb_args]
+    if check_relationship:
+        keyboard_data = keyboard_data[1:] if users[user_id]["relationship"] >= 0 else keyboard_data[:1]
+    users[user_id]["registered_messages"] = [x["text"] for x in keyboard_data]
+    users[user_id]["registered_answers_id"] = [x["answer_id"] for x in keyboard_data]
