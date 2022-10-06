@@ -191,7 +191,7 @@
       "type": "text",
       "message": {
         "check_relationship": false,
-        "delay": 3,
+        "delay": 2,
         "text": "Я был еще подростком, набрался и поспорил с друзьями, что попаду на вечеринку к тому режиссеру, который снял хил про ассасина из трущеб",
         "keyboard": [
           {
@@ -522,7 +522,7 @@
       "type": "photo",
       "message": {
         "check_relationship": false,
-        "delay": 3,
+        "delay": 2,
         "text": "",
         "photo": "dude.jpg",
         "keyboard": [
@@ -583,7 +583,7 @@
       "type": "photo",
       "message": {
         "check_relationship": false,
-        "delay": 3,
+        "delay": 2,
         "text": "",
         "photo": "dude.jpg",
         "keyboard": [
