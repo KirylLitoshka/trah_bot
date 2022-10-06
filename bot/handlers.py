@@ -27,6 +27,9 @@ async def echo(message: Message):
     users[user_id].setdefault("registered_messages", [])
     users[user_id].setdefault("last_choiced_option", "1")
     users[user_id].setdefault("relationship", 0)
+    if users[user_id]["last_choiced_option"] == list(options.keys())[-1]:
+        users[user_id]["registered_messages"] = []
+        users[user_id]["registered_answers_id"] = []
     if message.text not in users[user_id]["registered_messages"]:
         await bot.delete_message(message.chat.id, message.message_id)
         return
