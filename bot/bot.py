@@ -24,7 +24,7 @@ def main():
     bot = Bot(BOT_KEY)
     dispatcher = Dispatcher(bot)
     executor.start_polling(
-        dispatcher=dispatcher, on_startup=on_startup, on_shutdown=on_shutdown
+        dispatcher=dispatcher, on_startup=on_startup, on_shutdown=on_shutdown, skip_updates=True
     )
 
 
