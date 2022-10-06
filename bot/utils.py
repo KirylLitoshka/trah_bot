@@ -1,4 +1,4 @@
-from aiogram.types import Message, ReplyKeyboardMarkup, KeyboardButton, InputFile, User
+from aiogram.types import Message, ReplyKeyboardMarkup, KeyboardButton, InputFile, User, ReplyKeyboardRemove
 from aiogram import Dispatcher
 from setting import IMAGES_DIR
 import asyncio
@@ -7,7 +7,8 @@ import asyncio
 async def send_message(message: Message, msg_option: dict):
     message_args = msg_option["message"]
     message_type = msg_option["type"]
-    await asyncio.sleep(message_args.get("delay", 0.5))
+    if message_args.get("delay"):
+        await asyncio.sleep(message_args["delay"])
     if message_type == "text":
         await message.answer(
             text=message_args["text"], reply_markup=build_keyboard(message_args)
@@ -33,7 +34,7 @@ def build_keyboard(args: dict):
     keyboard_args = args.get("keyboard", None)
     check_relationship = args["check_relationship"]
     if keyboard_args is None:
-        return
+        return ReplyKeyboardRemove()
     keyboard_args = register_user_choices(check_relationship, keyboard_args)
     keyboard = ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True)
     for keyboard_item in keyboard_args:
