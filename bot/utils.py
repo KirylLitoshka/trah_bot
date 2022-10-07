@@ -1,7 +1,24 @@
-from aiogram.types import Message, ReplyKeyboardMarkup, KeyboardButton, InputFile, User, ReplyKeyboardRemove
+from aiogram.types import (
+    Message,
+    ReplyKeyboardMarkup,
+    KeyboardButton,
+    InputFile,
+    User,
+    ReplyKeyboardRemove,
+    BotCommand,
+)
 from aiogram import Dispatcher
 from setting import IMAGES_DIR
 import asyncio
+
+
+async def set_bot_commands(dispatcher: Dispatcher):
+    await dispatcher.bot.set_my_commands(
+        [
+            BotCommand("continue", "Ленивое описание"),
+            BotCommand("back", "Вернуться в рут-бот"),
+        ]
+    )
 
 
 async def send_message(message: Message, msg_option: dict):
@@ -17,7 +34,7 @@ async def send_message(message: Message, msg_option: dict):
         await message.answer_photo(
             photo=InputFile(f'{IMAGES_DIR}/{message_args["photo"]}'),
             caption=message_args["text"],
-            reply_markup=build_keyboard(message_args),
+            reply_markup=build_keyboard(message_args)
         )
     elif message_type == "sticker":
         await message.answer_sticker(
@@ -46,7 +63,11 @@ def register_user_choices(check_relationship: bool, keyboard_data: list):
     user_id = str(User.get_current().id)
     users = Dispatcher.get_current().data["users"]
     if check_relationship:
-        keyboard_data = keyboard_data[1:] if users[user_id]["relationship"] >= 0 else keyboard_data[:1]
+        keyboard_data = (
+            keyboard_data[1:]
+            if users[user_id]["relationship"] >= 0
+            else keyboard_data[:1]
+        )
     users[user_id]["registered_messages"] = [x["text"] for x in keyboard_data]
     users[user_id]["registered_answers_id"] = [x["answer_id"] for x in keyboard_data]
     return keyboard_data
