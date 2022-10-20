@@ -1,9 +1,11 @@
+import os
 import json
 import openpyxl
+from setting import STATIC_DIR, STORAGE_DIR
 
 
 def get_xls_data():
-    workbook = openpyxl.load_workbook("novel.xlsx")
+    workbook = openpyxl.load_workbook(os.path.join(STATIC_DIR, "novel.xlsx"))
     # 'Лист1' by default or replace with the desired list
     novel_table = workbook["Лист1"]
     data = {}
@@ -67,7 +69,7 @@ def main():
     clear_choices_ids(dialog_data)
     clear_choices_params(dialog_data)
     print("")
-    with open("conv.json", mode="w", encoding="utf8") as file:
+    with open(f"{STORAGE_DIR}/dialogs.json", mode="w", encoding="utf8") as file:
         file.write(json.dumps(dialog_data, indent=4, ensure_ascii=False))
 
 
