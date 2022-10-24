@@ -5,6 +5,7 @@ from aiogram.types import (
     InlineKeyboardButton,
 )
 from aiogram import Dispatcher, Bot
+from aiogram.types import User
 from utils import send_message
 
 
@@ -37,7 +38,7 @@ async def back(message: Message):
     )
 
 
-async def echo(message: Message):
+async def _echo(message: Message):
     dispatcher = Dispatcher.get_current()
     users = dispatcher.data["users"]
     options = dispatcher.data["conversation"]
@@ -66,3 +67,10 @@ async def echo(message: Message):
             choice_index
         ]
     await send_message(message, options[users[user_id]["last_choiced_option"]])
+
+
+async def echo(message: Message):
+    dispatcher = Dispatcher.get_current()
+    user_id = str(User.get_current().id)
+    messanger = dispatcher.data['messanger']
+    await messanger.send_message(message, user_id)
