@@ -39,6 +39,7 @@ class Messanger:
         await self._send_message(user_id, reply_message_args)
         while not reply_message_args["choices"]:
             next_dialog_id = str(int(next_dialog_id) + 1)
+            print(next_dialog_id)
             next_id = (
                 next_dialog_id
                 if not reply_message_args["jump_id"]
