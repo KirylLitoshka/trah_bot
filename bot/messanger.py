@@ -1,6 +1,12 @@
 import asyncio
 from aiogram import Bot
-from aiogram.types import Message, InputFile, ReplyKeyboardRemove
+from aiogram.types import (
+    Message,
+    InputFile,
+    ReplyKeyboardRemove,
+    ReplyKeyboardMarkup,
+    KeyboardButton,
+)
 from setting import IMAGES_DIR, MEDIA_DIR
 
 
@@ -19,23 +25,27 @@ class Messanger:
         }
 
     async def send_message(self, message: Message, user_id: str):
-        print(message.text)
         if user_id not in self.users:
             await self.create_new_user(user_id)
         current_user = self.users[user_id]
-        user_registestered_answers = [
-            item["answer_text"] for item in current_user["registered_answers"]
-        ]
-        if message.text not in user_registestered_answers:
+        answers = [item["answer_text"] for item in current_user["registered_answers"]]
+        if message.text not in answers:
             await self.bot.delete_message(message.chat.id, message.message_id)
             return
-        choice_index = user_registestered_answers.index(message.text)
-        reply_message_args = self.dialogs[
-            current_user["registered_answers"][choice_index]["next_id"]
-        ]
+        choice_index = answers.index(message.text)
+        next_dialog_id = current_user["registered_answers"][choice_index]["next_id"]
+        reply_message_args = self.dialogs[next_dialog_id]
+        current_user["last_received_message_id"] = next_dialog_id
         await self._send_message(user_id, reply_message_args)
-        if not reply_message_args["choices"]:
-            reply_message_args = self.dialogs[current_user["last_received_message_id"]]
+        while not reply_message_args["choices"]:
+            next_dialog_id = str(int(next_dialog_id) + 1)
+            next_id = (
+                next_dialog_id
+                if not reply_message_args["jump_id"]
+                else reply_message_args["jump_id"]
+            )
+            current_user["last_received_message_id"] = next_id
+            reply_message_args = self.dialogs[next_id]
             await self._send_message(user_id, reply_message_args)
 
     async def _send_message(self, user_id: str, message_args: dict):
@@ -74,4 +84,19 @@ class Messanger:
         if not message_args["choices"]:
             self.users[user_id]["registered_answers"] = []
             return ReplyKeyboardRemove()
-        print(message_args)
+        else:
+            keyboard = ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True)
+            user_answers = []
+            for choice in message_args["choices"]:
+                choice_message = self.dialogs[choice]
+                keyboard.add(KeyboardButton(choice_message["text"]))
+                next_id = (
+                    choice_message["jump_id"]
+                    if choice_message["jump_id"]
+                    else str(int(choice) + 1)
+                )
+                user_answers.append(
+                    {"answer_text": choice_message["text"], "next_id": next_id}
+                )
+            self.users[user_id]["registered_answers"] = user_answers
+            return keyboard
