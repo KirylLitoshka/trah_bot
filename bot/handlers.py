@@ -16,7 +16,6 @@ async def echo(message: types.Message):
     if user_id not in dispatcher.data["users"]:
         await create_new_user(dispatcher.data, user_id)
     current_user = dispatcher.data["users"][user_id]
-    print(current_user)
     possible_answers = current_user["registered_answers"]
     answer_texts = [item["text"] for item in possible_answers]
     if message.text not in answer_texts:
@@ -24,29 +23,26 @@ async def echo(message: types.Message):
         return
     choice_index = answer_texts.index(message.text)
     next_dialog_id = current_user["registered_answers"][choice_index]["next_id"]
-    reply_message = dispatcher.data['dialogs'][next_dialog_id]
+    reply_message = dispatcher.data["dialogs"][next_dialog_id]
     current_user["last_received_message_id"] = next_dialog_id
-    if next_dialog_id == dispatcher.data["dialogs"].keys()[-1]:
+    if next_dialog_id == list(dispatcher.data["dialogs"].keys())[-1]:
         # Концовка
         return
-    while not reply_message['choices']:
+    while not reply_message["choices"]:
         await send_message(
             bot=dispatcher.bot,
             user=current_user,
             user_id=user_id,
-            message_args=reply_message
+            message_args=reply_message,
         )
         next_dialog_id = str(int(next_dialog_id) + 1)
         if reply_message["jump_id"]:
             next_dialog_id = reply_message["jump_id"]
-        reply_message = dispatcher.data['dialogs'][next_dialog_id]
+        reply_message = dispatcher.data["dialogs"][next_dialog_id]
         current_user["last_received_message_id"] = next_dialog_id
-
     await send_message(
         bot=dispatcher.bot,
         user=current_user,
         user_id=user_id,
-        message_args=reply_message
+        message_args=reply_message,
     )
-
-
