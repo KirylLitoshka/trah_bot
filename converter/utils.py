@@ -14,13 +14,13 @@ def open_workbook(*args, **kwargs):
 def clean_choices(value):
     if value is None:
         return None
-    return str(value).split("*")
+    return [str(int(float(item))) for item in str(value).split("*")]
 
 
 def clean_jump_id(value):
     if value is None:
         return None
-    return str(value)
+    return str(int(float(value)))
 
 
 def clean_choices_param(value):
