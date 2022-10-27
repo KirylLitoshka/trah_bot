@@ -1,5 +1,5 @@
 from aiogram import types, Dispatcher
-from utils.messages import send_message
+from utils.messages import sending_messages_till_answer
 from utils.choices import on_choice_action
 
 
@@ -22,30 +22,15 @@ async def echo(message: types.Message):
     if message.text not in answer_texts:
         await dispatcher.bot.delete_message(message.chat.id, message.message_id)
         return
+    current_user["registered_answers"] = []
     choice_index = answer_texts.index(message.text)
     if possible_answers[choice_index]["on_choice"]:
-        on_choice_action(current_user, choice_index)
-    next_dialog_id = current_user["registered_answers"][choice_index]["next_id"]
-    reply_message = dispatcher.data["dialogs"][next_dialog_id]
+        on_choice_expression = possible_answers[choice_index]["on_choice"]
+        on_choice_action(current_user, on_choice_expression)
+    next_dialog_id = possible_answers[choice_index]["next_id"]
     current_user["last_received_message_id"] = next_dialog_id
-    if next_dialog_id == list(dispatcher.data["dialogs"].keys())[-1]:
+    try:
+        await sending_messages_till_answer(dispatcher, current_user, user_id, next_dialog_id)
+    except IndexError:
         # Концовка (переделать, т.к выходит до отправки последнего сообщения)
         return
-    while not reply_message["choices"]:
-        await send_message(
-            bot=dispatcher.bot,
-            user=current_user,
-            user_id=user_id,
-            message_args=reply_message,
-        )
-        next_dialog_id = str(int(next_dialog_id) + 1)
-        if reply_message["jump_id"]:
-            next_dialog_id = reply_message["jump_id"]
-        reply_message = dispatcher.data["dialogs"][next_dialog_id]
-        current_user["last_received_message_id"] = next_dialog_id
-    await send_message(
-        bot=dispatcher.bot,
-        user=current_user,
-        user_id=user_id,
-        message_args=reply_message,
-    )
