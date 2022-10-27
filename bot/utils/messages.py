@@ -4,6 +4,26 @@ from utils.keyboard import reply_keyboard
 import asyncio
 
 
+async def sending_messages_till_answer(dispatcher, user, user_id, next_message_id):
+    reply_message = dispatcher.data["dialogs"][next_message_id]
+    while not reply_message["choices"]:
+        await send_message(
+            bot=dispatcher.bot,
+            user=user,
+            user_id=user_id,
+            message_args=reply_message,
+        )
+        next_message_id = reply_message.get("jump_id") or str(int(next_message_id) + 1)
+        reply_message = dispatcher.data["dialogs"][next_message_id]
+        user["last_received_message_id"] = next_message_id
+    await send_message(
+        bot=dispatcher.bot,
+        user=user,
+        user_id=user_id,
+        message_args=reply_message,
+    )
+
+
 async def send_message(bot, user: dict, user_id: str, message_args: dict):
     if message_args["delay"]:
         await asyncio.sleep(message_args["delay"])
