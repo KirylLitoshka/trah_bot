@@ -11,8 +11,7 @@ SIGN_ACTION = {
 }
 
 
-def on_choice_action(user: dict, choice_index: int):
-    choice_expression = user["registered_answers"][choice_index]["on_choice"]
+def on_choice_action(user: dict, choice_expression: str):
     if choice_expression == "0":
         return
     param_name = re.search("[a-z]+", choice_expression).group()
@@ -20,6 +19,8 @@ def on_choice_action(user: dict, choice_index: int):
         exp_sign = re.search("[+|-]+", choice_expression).group()
         exp_value = re.search("[0-9]+", choice_expression).group()
         user[param_name] = SIGN_ACTION[exp_sign](user[param_name], int(exp_value))
+    else:
+        raise Exception(f"User doesn't have '{param_name}' param")
 
 
 def check_args(user, expression):
@@ -30,3 +31,6 @@ def check_args(user, expression):
         exp_sign = re.search("[=|<|>]+", expression).group()
         exp_value = re.search("[0-9]+", expression).group()
         return SIGN_ACTION[exp_sign](user[param_name], int(exp_value))
+    else:
+        raise Exception(f"User doesn't have '{param_name}' param")
+
