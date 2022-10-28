@@ -31,6 +31,6 @@ async def echo(message: types.Message):
     current_user["last_received_message_id"] = next_dialog_id
     try:
         await sending_messages_till_answer(dispatcher, current_user, user_id, next_dialog_id)
-    except IndexError:
+    except KeyError:
         # Концовка (переделать, т.к выходит до отправки последнего сообщения)
         return
