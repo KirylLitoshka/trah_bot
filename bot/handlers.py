@@ -1,68 +1,35 @@
-from aiogram.types import (
-    Message,
-    MenuButtonCommands,
-    InlineKeyboardMarkup,
-    InlineKeyboardButton,
-)
-from aiogram import Dispatcher, Bot
-from utils import send_message
+from aiogram import types, Dispatcher
+from utils.messages import sending_messages_till_answer
+from utils.choices import on_choice_action
 
 
-async def start(message: Message):
-    await Bot.get_current().set_chat_menu_button(message.chat.id, MenuButtonCommands())
-    users = Dispatcher.get_current().data["users"]
-    options = Dispatcher.get_current().data["conversation"]
-    user_id = str(message.from_user.id)
-    if user_id not in users or "last_choiced_option" not in users[user_id]:
-        users[user_id] = {"last_choiced_option": "1"}
-        await message.answer(text="У Вас есть новое совпадение")
-    await send_message(message, options[users[user_id]["last_choiced_option"]])
+async def create_new_user(dp_data, user_id):
+    dp_data["users"][user_id] = {
+        "last_received_message_id": None,
+        "registered_answers": [{"text": "/start", "next_id": "0", "on_choice": None}],
+    }
 
 
-async def back(message: Message):
-    inline_keyboard = InlineKeyboardMarkup(
-        row_width=1,
-        inline_keyboard=[
-            [
-                InlineKeyboardButton(
-                    text="Тыц",
-                    url="",  # link to root bot
-                )
-            ]
-        ],
-    )
-    await message.answer(
-        text="Для перехода в основной канал нажмите кнопку ниже",
-        reply_markup=inline_keyboard,
-    )
-
-
-async def echo(message: Message):
+async def echo(message: types.Message):
     dispatcher = Dispatcher.get_current()
-    users = dispatcher.data["users"]
-    options = dispatcher.data["conversation"]
     user_id = str(message.from_user.id)
-    bot = Bot.get_current()
-    if user_id not in users:
-        users[user_id] = {}
-        await start(message)
-        await bot.delete_message(message.chat.id, message.message_id)
+    if user_id not in dispatcher.data["users"]:
+        await create_new_user(dispatcher.data, user_id)
+    current_user = dispatcher.data["users"][user_id]
+    possible_answers = current_user["registered_answers"]
+    answer_texts = [item["text"] for item in possible_answers]
+    if message.text not in answer_texts:
+        await dispatcher.bot.delete_message(message.chat.id, message.message_id)
         return
-    users[user_id].setdefault("registered_messages", [])
-    users[user_id].setdefault("last_choiced_option", "1")
-    users[user_id].setdefault("relationship", 0)
-    if users[user_id]["last_choiced_option"] == list(options.keys())[-1]:
-        users[user_id]["registered_messages"] = []
-        users[user_id]["registered_answers_id"] = []
-    if message.text not in users[user_id]["registered_messages"]:
-        await bot.delete_message(message.chat.id, message.message_id)
+    current_user["registered_answers"] = []
+    choice_index = answer_texts.index(message.text)
+    if possible_answers[choice_index]["on_choice"]:
+        on_choice_expression = possible_answers[choice_index]["on_choice"]
+        on_choice_action(current_user, on_choice_expression)
+    next_dialog_id = possible_answers[choice_index]["next_id"]
+    current_user["last_received_message_id"] = next_dialog_id
+    try:
+        await sending_messages_till_answer(dispatcher, current_user, user_id, next_dialog_id)
+    except KeyError:
+        # Концовка (переделать, т.к выходит до отправки последнего сообщения)
         return
-    else:
-        choice_index = users[user_id]["registered_messages"].index(message.text)
-        if len(users[user_id]["registered_messages"]) > 1:
-            relation_choice_value = -1 if choice_index == 0 else 1
-            users[user_id]["relationship"] += relation_choice_value
-        users[user_id]["last_choiced_option"] = users[user_id]["registered_answers_id"][
-            choice_index
-        ]
-    await send_message(message, options[users[user_id]["last_choiced_option"]])
