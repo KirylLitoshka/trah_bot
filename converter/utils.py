@@ -49,7 +49,7 @@ def clean_data(data: dict) -> dict:
 
 def excel_as_dict(fn):
     table_keys = [
-        "text",
+        "ru",
         "choices",
         "choices_param",
         "jump_id",
@@ -58,6 +58,7 @@ def excel_as_dict(fn):
         "delay",
         "voice",
         "event",
+        "text"
     ]
 
     def wrapper(*args, **kwargs):
@@ -66,7 +67,7 @@ def excel_as_dict(fn):
         for worksheet_row in list(xls_data.rows)[1:]:
             dialog_id = str(int(worksheet_row[0].value))
             data[dialog_id] = {}
-            for col in worksheet_row[1:10]:
+            for col in worksheet_row[1:11]:
                 data[dialog_id][table_keys[col.col_idx - 2]] = col.value
         if not data:
             raise

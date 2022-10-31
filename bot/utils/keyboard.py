@@ -19,10 +19,17 @@ def reply_keyboard(user, message_args):
             keyboard.add(KeyboardButton(choice_message["text"]))
             next_id = choice_message.get("jump_id") or str(int(choice) + 1)
             on_choice = None
+            if choice_message["choices"]:
+                for index, choice in enumerate(choice_message["choices"]):
+                    if choice_message["choices_param"]:
+                        args_for_checking = choice_message["choices_param"][index]["check_args"]
+                        if not check_args(user, args_for_checking):
+                            continue
+                        next_id = choice_message["choices"][index]
             if message_args["choices_param"]:
                 on_choice = message_args["choices_param"][index]["on_choice"]
             user_answers.append({
-                "text": choice_message["text"],
+                "text": choice_message["text"].strip(),
                 "next_id": next_id,
                 "on_choice": on_choice,
             })

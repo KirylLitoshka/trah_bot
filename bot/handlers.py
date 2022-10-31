@@ -6,7 +6,8 @@ from utils.choices import on_choice_action
 async def create_new_user(dp_data, user_id):
     dp_data["users"][user_id] = {
         "last_received_message_id": None,
-        "derzost": 0,
+        "keks": 0,
+        "loc": None,
         "registered_answers": [{"text": "/start", "next_id": "0", "on_choice": None}],
     }
 
