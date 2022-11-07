@@ -1,0 +1,20 @@
+{
+    "871840722": {
+        "last_received_message_id": "7",
+        "keks": 0,
+        "loc": null,
+        "registered_answers": [
+            {
+                "text": "Hahaha, no. Just a lot of work today.",
+                "next_id": "9",
+                "on_choice": null
+            }
+        ]
+    },
+    "431889486": {
+        "last_received_message_id": "368",
+        "keks": -1,
+        "loc": 3,
+        "registered_answers": []
+    }
+}

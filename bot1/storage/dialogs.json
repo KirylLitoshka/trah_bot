@@ -1,0 +1,2608 @@
+{
+    "0": {
+        "ru": "У Вас есть новое совпадение.",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "You have a new match."
+    },
+    "1": {
+        "ru": null,
+        "choices": [
+            "2"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": "anketa.jpg",
+        "delay": 1.0,
+        "voice": null,
+        "event": null,
+        "text": null
+    },
+    "2": {
+        "ru": "Привет)",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Hey:)"
+    },
+    "3": {
+        "ru": "Отлично, ты ответила. Мой босс возлагал большие надежды именно на тебя.",
+        "choices": [
+            "4",
+            "8"
+        ],
+        "choices_param": [
+            {
+                "check_args": "0",
+                "on_choice": "derzost++1"
+            },
+            {
+                "check_args": "0",
+                "on_choice": "derzost--1"
+            }
+        ],
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Great, you've responded. My boss had high expectations for you."
+    },
+    "4": {
+        "ru": "Это шутка какая-то или новый вид подката?",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Is this some kind of a joke or are you hitting on me?"
+    },
+    "5": {
+        "ru": "Набирает сообщение...",
+        "choices": [
+            "6"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Typing..."
+    },
+    "6": {
+        "ru": "Гуглишь?",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Are you googling?"
+    },
+    "7": {
+        "ru": null,
+        "choices": null,
+        "choices_param": null,
+        "jump_id": "10",
+        "sticker": "CAACAgIAAxkBAAMsY1vA_oWjdZMQ3RzhWM0xDGuCFkUAAgcfAAL18NFKHg9PDeeqx7YqBA",
+        "photo": null,
+        "delay": 2.0,
+        "voice": null,
+        "event": null,
+        "text": null
+    },
+    "8": {
+        "ru": "Он, что, Бэтмен? Я переписываюсь с дворецким?\nАльфред, не убивай меня, пожалуйста.",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Who is he, Batman? Am I chatting with a butler?"
+    },
+    "9": {
+        "ru": null,
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": "CAACAgIAAxkBAAMkY1vA9xvz2SMBmXBV-AGzp1I_-noAAjUiAAKL3NhKcg1j-kKDfQMqBA",
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": null
+    },
+    "10": {
+        "ru": "Ахах)) Прости, я растерялся. Обычно мне отвечают совсем иначе.",
+        "choices": [
+            "11"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": 1.0,
+        "voice": null,
+        "event": null,
+        "text": "Hahah:) Sorry, I got puzzled. That's not usually the response I get."
+    },
+    "11": {
+        "ru": "И как же?",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "And what do they usually say?"
+    },
+    "12": {
+        "ru": "Сразу начинают задавать наводящие вопросы про Даниэля.",
+        "choices": [
+            "13",
+            "14"
+        ],
+        "choices_param": [
+            {
+                "check_args": "0",
+                "on_choice": "derzost++1"
+            },
+            {
+                "check_args": "0",
+                "on_choice": "derzost--1"
+            }
+        ],
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "They start asking questions about Daniel."
+    },
+    "13": {
+        "ru": "Самое безумное, что он совершал, напившись вдребезги?",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": "15",
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "What's the craziest thing he's done when wasted?"
+    },
+    "14": {
+        "ru": "Какой его любимый сериал детства?",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "What was his favorite childhood show?"
+    },
+    "15": {
+        "ru": "Ты необычная) Нет, про его доходы и условия встречи.",
+        "choices": [
+            "16"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "You're unusual:) No, about his income and terms of meeting."
+    },
+    "16": {
+        "ru": "Это банально и очень скучно. Так что, ответишь?",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "It's corny and super boring. So, are you going to answer?"
+    },
+    "17": {
+        "ru": "Я же не могу сказать за него.",
+        "choices": [
+            "18"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "I can't speak for him."
+    },
+    "18": {
+        "ru": "Скажи за себя)",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Speak for yourself:)"
+    },
+    "19": {
+        "ru": "Слушай, я буду выглядеть глупо.",
+        "choices": [
+            "20"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Look, I'm going to sound stupid."
+    },
+    "20": {
+        "ru": "Я даже не знаю, как ты выглядишь. Представь, что болтаешь со случайным попутчиком в самолете.",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "I don't even know what you look like. Imagine you're chatting with a random fellow passenger on a plane."
+    },
+    "21": {
+        "ru": "Ты знала, что сказать) Я боюсь летать, так что в полете выболтаю все, что угодно.",
+        "choices": [
+            "22"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "You knew what to say:) I'm afraid of flying, so I'll say anything on the flight."
+    },
+    "22": {
+        "ru": "Ахах)) Вот и отлично! Давай, откройся, тебе сразу станет легче 😈",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Hahah:)) That's great! Come on, open up, it'll make you feel better 😈."
+    },
+    "23": {
+        "ru": "Да мне не тяжело)) Ладно, хорошо. Но в эту игру можно играть вдвоем.",
+        "choices": [
+            "24"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "It'm not feeling bad at all:)))) Well, ok. But this game can be played by two."
+    },
+    "24": {
+        "ru": "Эй!",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Hey!"
+    },
+    "25": {
+        "ru": "Потом ответишь на один мой вопрос. Любой.",
+        "choices": [
+            "26",
+            "38"
+        ],
+        "choices_param": [
+            {
+                "check_args": "0",
+                "on_choice": "derzost++1"
+            },
+            {
+                "check_args": "0",
+                "on_choice": "derzost--1"
+            }
+        ],
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "You're going to answer a question for me later. Any question."
+    },
+    "26": {
+        "ru": "Надеюсь, он будет интересным. Или пикантным))",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "I hope it's interesting. Or spicy:)"
+    },
+    "27": {
+        "ru": "Мм, возможно - и таким и таким. Окей, поехали исповедоваться.",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Mm, probably both. Okay, let's begin the confession."
+    },
+    "28": {
+        "ru": "Я был еще подростком, набрался и поспорил с друзьями, что попаду на вечеринку к тому режиссеру, который снял хит про ассасина из трущоб.",
+        "choices": [
+            "29"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": 2.0,
+        "voice": null,
+        "event": null,
+        "text": "When I was a teenager, I got wasted and made a bet with my friends that I'd get to a party thrown by the director of the slumdog killer hit."
+    },
+    "29": {
+        "ru": "Ты шутишь? Он же почти небожитель.",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Are you kidding me? He's practically a celestial being."
+    },
+    "30": {
+        "ru": "Да, а я про что))",
+        "choices": [
+            "31"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "That's what I'm saying:))"
+    },
+    "31": {
+        "ru": "Так ты смог?",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Did you make it?"
+    },
+    "32": {
+        "ru": "Само собой) Переоделся в официанта и пробрался в его дом. До самого утра прятался от хозяина и охраны. Но так было даже веселее.",
+        "choices": [
+            "33",
+            "34"
+        ],
+        "choices_param": [
+            {
+                "check_args": "0",
+                "on_choice": "derzost++1"
+            },
+            {
+                "check_args": "0",
+                "on_choice": "derzost--1"
+            }
+        ],
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Of course:) I dressed as a waiter and snuck into his house. I hid from the owner and the guards until morning. But it was even more fun that way."
+    },
+    "33": {
+        "ru": "Все бы отдала за одну такую ночь...",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": "35",
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "I'd give anything for a night like that..."
+    },
+    "34": {
+        "ru": "Я бы там от страха умерла, но звучит шикарно.",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "I'd be scared to death in there, but it sounds great."
+    },
+    "35": {
+        "ru": "Правда, это было незабываемо! Ну, по большей части. Все же, я хорошо так заправился отцовским виски 😎",
+        "choices": [
+            "36"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Really, it was unforgettable! Well, for the most part. I did take a good swig of my dad's whiskey 😎"
+    },
+    "36": {
+        "ru": "А как остальные гости не раскусили, что ты мелкий?",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "How come the other guests didn't notice that you were a child?"
+    },
+    "37": {
+        "ru": "Во-первых, им было плевать. Во-вторых, я никогда не был особо мелким.",
+        "choices": [
+            "50"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "First of all, they didn't care. Secondly, I've never been particularly small."
+    },
+    "38": {
+        "ru": "Надеюсь, он будет интересным. Или веселым))",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "I hope it's interesting. Or funny:))"
+    },
+    "39": {
+        "ru": "Мм, возможно - и таким и таким. Окей, поехали исповедоваться.",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Mm, probably both. Okay, let's begin the confession."
+    },
+    "40": {
+        "ru": "Я обожал Секретные материалы. Правда, няня запрещала их смотреть.",
+        "choices": [
+            "41"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": 2.0,
+        "voice": null,
+        "event": null,
+        "text": "I used to love The X-Files. Except my babysitter wouldn't let me watch it."
+    },
+    "41": {
+        "ru": "У тебя была няня?",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "You had a babysitter?"
+    },
+    "42": {
+        "ru": "Ну конечно, а у тебя нет? Как же твои родители справлялись?",
+        "choices": [
+            "43"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Of course, didn't you? How did your parents cope?"
+    },
+    "43": {
+        "ru": "Эмм, с трудом) А почему запрещала?",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Barely:) Why didn't they let you watch the show?"
+    },
+    "44": {
+        "ru": "Я был мелкий и очень боялся всего, что там происходит. Потом уснуть не мог. Но ни о чем не жалею))",
+        "choices": [
+            "45",
+            "46"
+        ],
+        "choices_param": [
+            {
+                "check_args": "0",
+                "on_choice": "derzost--1"
+            },
+            {
+                "check_args": "0",
+                "on_choice": "derzost++1"
+            }
+        ],
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "I was little and so scared of everything that was going on. I couldn't sleep. But I don't regret it:)."
+    },
+    "45": {
+        "ru": "Нравится испытывать себя?",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": "47",
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Do you like to test yourself?"
+    },
+    "46": {
+        "ru": "Любишь пощекотать нервы?",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Do you like to tickle your nerves?"
+    },
+    "47": {
+        "ru": "Можно и так сказать. Смешно вспомнить, но тогда я хотел стать агентом ФБР и всерьез начал заниматься спортом.",
+        "choices": [
+            "48"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "You could say that, I suppose. It's funny to remember, but back then I wanted to be an FBI agent, so I started working out in earnest."
+    },
+    "48": {
+        "ru": "Надо подкачаться - это самый неожиданный вывод из такого сериала!",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "I have to get in shape: that's the most unexpected conclusion to a show like this!"
+    },
+    "49": {
+        "ru": "Что ты хочешь от 8-летки? Да и в жизни мне это пригодилось больше, чем если бы я увлекся изучением паранормального))",
+        "choices": [
+            "50"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "But what do you want from an 8-year-old? And it turned out to be a better option that to become a paranotmal investigator:))"
+    },
+    "50": {
+        "ru": "Спортсмен?",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Are you an athlete?"
+    },
+    "51": {
+        "ru": "Не то, чтобы очень и всерьез...",
+        "choices": [
+            "52"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Well, not really..."
+    },
+    "52": {
+        "ru": "Покажи!",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Show me!"
+    },
+    "53": {
+        "ru": "Что?",
+        "choices": [
+            "54"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "What?"
+    },
+    "54": {
+        "ru": "Скинь фото. Я же видела только аватарку твоего гламурного босса)",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Send me your picture. I've only seen your glamorous boss' profile pic:)"
+    },
+    "55": {
+        "ru": "Так, мы вроде договорились, что я отвечу, и потом твоя очередь?",
+        "choices": [
+            "56"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "I thought we agreed that I would respond and then it would be your turn."
+    },
+    "56": {
+        "ru": "Да брось, ты должен проиллюстрировать свой рассказ! Иначе это выглядит, как обычная байка, чтобы произвести впечатление)",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Come on, you have to illustrate your story! Otherwise, it just looks like a story to impress:)"
+    },
+    "57": {
+        "ru": "Извини, мне звонят. Боюсь, это надолго.",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Sorry, I have a call. I'm afraid it's going to take a while."
+    },
+    "58": {
+        "ru": "Пользователь появился в сети...",
+        "choices": [
+            "59",
+            "66"
+        ],
+        "choices_param": [
+            {
+                "check_args": "0",
+                "on_choice": "derzost++1"
+            },
+            {
+                "check_args": "0",
+                "on_choice": "derzost--1"
+            }
+        ],
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": 120.0,
+        "voice": null,
+        "event": null,
+        "text": "This user is online..."
+    },
+    "59": {
+        "ru": "Думаешь, я поверила?",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Did you expect me to believe that?"
+    },
+    "60": {
+        "ru": null,
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": "CAACAgIAAxkBAAMoY1vA-rUtsC767zMVLxbT2dhU4dQAAqYeAAI2PdFKbMLmWSYhoJsqBA",
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": null
+    },
+    "61": {
+        "ru": null,
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": "podmenamuzhika.jpg",
+        "delay": 3.0,
+        "voice": null,
+        "event": null,
+        "text": null
+    },
+    "62": {
+        "ru": "Так лучше?",
+        "choices": [
+            "63"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": 2.0,
+        "voice": null,
+        "event": null,
+        "text": "Is that better?"
+    },
+    "63": {
+        "ru": "Ого...",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Wow..."
+    },
+    "64": {
+        "ru": "Буду считать, что это комплимент))",
+        "choices": [
+            "65"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "I'll take that as a compliment:))"
+    },
+    "65": {
+        "ru": "Да) Жаль, только, что ракурс не самый удачный. Не все можно рассмотреть 😏",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": "73",
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Yes:) It's a shame the angle isn't the best. I can't see everything 😏"
+    },
+    "66": {
+        "ru": "Звучит не особо правдоподобно)",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "That doesn't look very believable:)"
+    },
+    "67": {
+        "ru": null,
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": "CAACAgIAAxkBAAMYY1vA6KkCl2w7EVJ-7h_a_jCZakAAAmMiAAJeBtBKZnK0eFFoZb0qBA",
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": null
+    },
+    "68": {
+        "ru": null,
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": "podmenamuzhika.jpg",
+        "delay": 3.0,
+        "voice": null,
+        "event": null,
+        "text": null
+    },
+    "69": {
+        "ru": "Лови.",
+        "choices": [
+            "70"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": 2.0,
+        "voice": null,
+        "event": null,
+        "text": "Here."
+    },
+    "70": {
+        "ru": "Ты точно помощник бизнесмена, а не австралийский пожарный?",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Are you sure you're a businessman's assistant and not an Australian firefighter?"
+    },
+    "71": {
+        "ru": "Такого мне еще никто не говорил)) Спасибо!",
+        "choices": [
+            "72"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "No one has ever told me that before:)) Thanks!"
+    },
+    "72": {
+        "ru": "Правда, у австралийских пожарных в ежегодном календаре и то больше можно рассмотреть, чем на этом фото. Извини 🙈",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "But I can see more in Australian firefighters' annual calendar than in this picture. Sorry 🙈"
+    },
+    "73": {
+        "ru": "Мне кажется, или ты меня разводишь еще на одну фотку?",
+        "choices": [
+            "74"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Is it just me, or are you tricking me into taking another photo?"
+    },
+    "74": {
+        "ru": "Тебе не кажется))",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "It's not just you:))"
+    },
+    "75": {
+        "ru": "Я первый раз в такой ситуации 😅",
+        "choices": [
+            "76",
+            "85"
+        ],
+        "choices_param": [
+            {
+                "check_args": "0",
+                "on_choice": "derzost++1"
+            },
+            {
+                "check_args": "0",
+                "on_choice": "derzost--1"
+            }
+        ],
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "This is the first time I find myself in such a situation 😅"
+    },
+    "76": {
+        "ru": "Первый? Обещаю не торопить и быть понежнее 😇",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "First time? I promise not to rush and be gentle 😇"
+    },
+    "77": {
+        "ru": "Не надо, мне не нравится, когда понежнее.",
+        "choices": [
+            "78"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Don't, I don't like it gentle."
+    },
+    "78": {
+        "ru": "Докажи.",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Prove it."
+    },
+    "79": {
+        "ru": "С тобой не соскучишься)",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "You're never boring:)"
+    },
+    "80": {
+        "ru": null,
+        "choices": [
+            "81"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": "nakresle.jpg",
+        "delay": 3.0,
+        "voice": null,
+        "event": null,
+        "text": null
+    },
+    "81": {
+        "ru": "С тобой, кажется, тоже.",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Neither are you, I think."
+    },
+    "82": {
+        "ru": "Прекращай быть такой.",
+        "choices": [
+            "83"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Stop being like that."
+    },
+    "83": {
+        "ru": "Какой?",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Like what?"
+    },
+    "84": {
+        "ru": "Не важно.",
+        "choices": [
+            "94"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Doesn't matter. "
+    },
+    "85": {
+        "ru": "Первый? Что ж, для первого раза ты неплохо держишься 😜",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "First time? Well, you're not bad for a first time 😜"
+    },
+    "86": {
+        "ru": "Только благодаря тебе)",
+        "choices": [
+            "87"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Only thanks to you:)"
+    },
+    "87": {
+        "ru": "Знаю, что ты не всерьез, но я смутилась немного.",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "I know you don't mean it, but I'm a little embarrassed."
+    },
+    "88": {
+        "ru": "Я всерьез) Вот, может, это поможет раскрепоститься:",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "I mean it:) Here, maybe this will help you loosen up:"
+    },
+    "89": {
+        "ru": null,
+        "choices": [
+            "90"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": "nakresle.jpg",
+        "delay": 3.0,
+        "voice": null,
+        "event": null,
+        "text": null
+    },
+    "90": {
+        "ru": "Воу... А Вы точно психолог?",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Wow..."
+    },
+    "91": {
+        "ru": "Обожаю тебя))",
+        "choices": [
+            "92"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "I'm such a fan of yours:))"
+    },
+    "92": {
+        "ru": "Ого...",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Wow..."
+    },
+    "93": {
+        "ru": "Прошу прощения, это было лишнее.",
+        "choices": [
+            "94"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Sorry, that was unnecessary."
+    },
+    "94": {
+        "ru": "Ах, ну да, ты же не для себя, а для друга.",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Of course, it's not for you, it's for a friend."
+    },
+    "95": {
+        "ru": "...",
+        "choices": [
+            "96"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "..."
+    },
+    "96": {
+        "ru": "Помню, мы начали разговор с того, что твой босс что-то там возложил без моего согласия.",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "I remember we started the conversation with your boss being high or something."
+    },
+    "97": {
+        "ru": "Пользователь вышел из сети...",
+        "choices": [
+            "98"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "This user is offline..."
+    },
+    "98": {
+        "ru": "Ты куда пропал? Все нормально?",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Where'd you go? Are you okay?"
+    },
+    "99": {
+        "ru": "Нет.",
+        "choices": [
+            "100",
+            "103"
+        ],
+        "choices_param": [
+            {
+                "check_args": "derzost>0",
+                "on_choice": "0"
+            },
+            {
+                "check_args": "derzost<=0",
+                "on_choice": "0"
+            }
+        ],
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": 30.0,
+        "voice": null,
+        "event": null,
+        "text": "No."
+    },
+    "100": {
+        "ru": "Слушай, это не я писала про заинтересованного начальника. Или это такой странный способ начать беседу?",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Look, it wasn't me who texted about an interested boss. Or is that some really weird way to start a conversation?"
+    },
+    "101": {
+        "ru": "Ты права, я забыл, зачем это все. Мой босс - Даниэль Обер, человек занятой, но любящий и умеющий качественно отдыхать.",
+        "choices": [
+            "102"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "You're right, I forgot what it was about. My boss is Daniel Ober, a busy man who likes to have high-quality fun."
+    },
+    "102": {
+        "ru": "Ага, читала в анкете про его компании и личный остров.",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": "106",
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Yes, his profile description mentions his companies and his private island."
+    },
+    "103": {
+        "ru": "Слушай, это не я писала про заинтересованного начальника. Или это такой странный способ начать беседу?",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Look, it wasn't me who texted about an interested boss. Or is that some really weird way to start a conversation?"
+    },
+    "104": {
+        "ru": "Ты права, я забыл, зачем это все. Мой босс - Даниэль Обер, человек занятой и циничный, но все еще надеющийся найти что-то... искреннее.",
+        "choices": [
+            "105"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "You're right, I forgot what it was about. My boss is Daniel Ober, a busy and cynical man, but still hoping to find something... sincere."
+    },
+    "105": {
+        "ru": "Ага, это сразу понятно из анкеты, где он пишет про личный остров и коллекцию люксовых машин.",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Yes, I can see it in his profile where he talks about a private island and a collection of luxury cars."
+    },
+    "106": {
+        "ru": "Ты поэтому написала?",
+        "choices": [
+            "107"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Is that why you texted?"
+    },
+    "107": {
+        "ru": "Нет, я подумала, что это шутка и написала.",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "No, I thought it was a joke, so I did."
+    },
+    "108": {
+        "ru": "Хм, интересно. Впрочем, не о том. Даниэль ищет спутницу для двухнедельного круиза по Средиземному морю и, возможно, последующего отдыха на его вилле.",
+        "choices": [
+            "109",
+            "110"
+        ],
+        "choices_param": [
+            {
+                "check_args": "0",
+                "on_choice": "derzost++1"
+            },
+            {
+                "check_args": "0",
+                "on_choice": "derzost--1"
+            }
+        ],
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Hmm, interesting. Anyway, that's not what this is about. Daniel is looking for a companion for a two-week Mediterranean cruise and possibly a vacation at his villa."
+    },
+    "109": {
+        "ru": "И что в этом \"качественного\"? Какой-то унылый эскорт.",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": "111",
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "How is that \"high-quality\"? Sounds like some lame escort."
+    },
+    "110": {
+        "ru": "И что в этом \"искреннего\"? Обычный эскорт. Фу(",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "How is that \"sincere\"? He's just looking for an escort. Ew:("
+    },
+    "111": {
+        "ru": "Я почему-то был уверен, что ты так ответишь.",
+        "choices": [
+            "112"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "For some reason, I was sure you'd say that."
+    },
+    "112": {
+        "ru": "Если честно, я не понимаю, почему еще не вышла из чата.",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Honestly, I don't understand why you haven't left the chat room yet."
+    },
+    "113": {
+        "ru": "Я тоже. Прости, слушай, ответь на один вопрос, и, если захочешь, я больше тебя не потревожу.",
+        "choices": [
+            "114"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Me neither. Sorry, look, just answer one question and I won't bother you again if you don't want me to."
+    },
+    "114": {
+        "ru": "Какой вопрос?",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "What kind of question?"
+    },
+    "115": {
+        "ru": "Почему ты решила со мной общаться? С парнем, который даже не тот, что в анкете.",
+        "choices": [
+            "116"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Why have you decided to chat with me? I'm not even the guy in the profile."
+    },
+    "116": {
+        "ru": "Что за допрос?",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "What kind of interrogation is this?"
+    },
+    "117": {
+        "ru": "Это важно.",
+        "choices": [
+            "118"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "It's important."
+    },
+    "118": {
+        "ru": "Потому что мне понравилось общаться именно с тобой.",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Because I liked talking to you."
+    },
+    "119": {
+        "ru": "Правда?",
+        "choices": [
+            "120",
+            "121"
+        ],
+        "choices_param": [
+            {
+                "check_args": "0",
+                "on_choice": "derzost++1"
+            },
+            {
+                "check_args": "0",
+                "on_choice": "derzost--1"
+            }
+        ],
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "You did?"
+    },
+    "120": {
+        "ru": "Да, было откровенно и весело.",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": "122",
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Yeah, it was candid and fun."
+    },
+    "121": {
+        "ru": "Да, было весело и уютно.",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Yeah, it was fun and cozy."
+    },
+    "122": {
+        "ru": "Извини, просто... Я тут кое-что задумал.",
+        "choices": [
+            "123"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "I'm sorry, I'm just... I have something in mind."
+    },
+    "123": {
+        "ru": "Продолжай.",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Go on."
+    },
+    "124": {
+        "ru": "Знал, что ты заинтересуешься. Вернее, надеялся на это))",
+        "choices": [
+            "125"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "I knew you'd be interested. Or rather, I hoped you would:)"
+    },
+    "125": {
+        "ru": "Ну, я заинтригована.",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Well, I'm intrigued."
+    },
+    "126": {
+        "ru": "А ты бы не хотела встретиться со мной?",
+        "choices": [
+            "127"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Would you like to meet?"
+    },
+    "127": {
+        "ru": "Обсудить детали поездки с твоим боссом по Средиземному морю?",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "To discuss the details of a trip to the Mediterranean with your boss?"
+    },
+    "128": {
+        "ru": "Да блин, нет. Черт с ним. Со мной бы ты встретилась?",
+        "choices": [
+            "129",
+            "144"
+        ],
+        "choices_param": [
+            {
+                "check_args": "derzost>0",
+                "on_choice": "0"
+            },
+            {
+                "check_args": "derzost<=0",
+                "on_choice": "0"
+            }
+        ],
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "No, of course not. To hell with him. Would you meet with me?"
+    },
+    "129": {
+        "ru": "Пока ты не выдал тираду про круиз, то встретилась бы, а сейчас... Ну, не знаю.",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Before you went on with the cruise diatribe, I would have, but now... I don't know."
+    },
+    "130": {
+        "ru": "Да забудь ты о нем. Я дурак, признаю. Как мне загладить вину? Так подойдет?",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Forget about him. I'm an idiot, I admit it. How can I make it up to you? Would that be enough?"
+    },
+    "131": {
+        "ru": null,
+        "choices": [
+            "132"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": "skolopendra.jpg",
+        "delay": 3.0,
+        "voice": null,
+        "event": null,
+        "text": null
+    },
+    "132": {
+        "ru": "Так нечестно)) Не хочу забывать, теперь хочу в круиз и вечеринку на острове.",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "It's not fair:)) I don't want to forget, now I want to go on a cruise and party on an island."
+    },
+    "133": {
+        "ru": "Ладно, я понял.",
+        "choices": [
+            "134"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Okay, I got it."
+    },
+    "134": {
+        "ru": "Только с тобой)) Ты хорошо танцуешь?",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "But with you:)) Are you a good dancer?"
+    },
+    "135": {
+        "ru": "Да, неплохо. А что?",
+        "choices": [
+            "136"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Yes, I'm pretty good. Why?"
+    },
+    "136": {
+        "ru": "Скромный такой) Слышал про клуб Остров? Открылся недавно. Можем устроить свою вечеринку.",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "You're a modest guy. Have you heard about the Island Club? It just opened. We could have our own party."
+    },
+    "137": {
+        "ru": "Ты ведь сейчас серьезно?",
+        "choices": [
+            "138"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "You're serious now, aren't you?"
+    },
+    "138": {
+        "ru": "Ну да) Знаешь, говорят, что по тому, как кто-то танцует, можно понять, какой он в постеле.",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Yeah:) You know, they say you can tell what someone's like in bed by the way they dance."
+    },
+    "139": {
+        "ru": "Хм, я не против. Ты права, сначала нужно убедиться, что мы не опозоримся на танцполе.",
+        "choices": [
+            "140"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Hmm, I don't mind. You're right, first we should make sure we don't embarrass ourselves on the dance floor."
+    },
+    "140": {
+        "ru": "Что?",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "What?"
+    },
+    "141": {
+        "ru": null,
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": "CAACAgIAAxkBAAMeY1vA75-__kKAxdZ9n6Rtr8BHmqoAAlQfAAIUoNBKLIEgLJPZu_0qBA",
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": null
+    },
+    "142": {
+        "ru": "...",
+        "choices": [
+            "143"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": 1.0,
+        "voice": null,
+        "event": null,
+        "text": "..."
+    },
+    "143": {
+        "ru": "Эй 😂",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": "159",
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Hello 😂"
+    },
+    "144": {
+        "ru": "Пока ты не выдал тираду про круиз, то встретилась бы, а сейчас мне некомфортно. Что, если твой босс какой-то мстительный бандит?",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Before you went on with the cruise diatribe, I would have, but now I'm uncomfortable. What if your boss is a vindictive bully?"
+    },
+    "145": {
+        "ru": "Да, глупо получилось. Прости, что повел себя, как дурак. И ничего не бойся, я в состоянии тебя защитить)",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Yeah, that was stupid. I'm sorry I acted like an idiot. And don't worry, I can protect you:)"
+    },
+    "146": {
+        "ru": null,
+        "choices": [
+            "147"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": "skolopendra.jpg",
+        "delay": 3.0,
+        "voice": null,
+        "event": null,
+        "text": null
+    },
+    "147": {
+        "ru": "Так нечестно)) Но я теперь думаю, как было бы здорово гулять по ночному острову.",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "It's not fair:)) But now I'm thinking how nice it would be to walk around the island at night."
+    },
+    "148": {
+        "ru": "Ладно, я понял.",
+        "choices": [
+            "149"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "OK, I get it."
+    },
+    "149": {
+        "ru": "Здорово и безопасно. С тобой) Центральный парк, конечно, не частный остров, но мне там нравится.",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Great and safe. With you:) Central Park is certainly not a private island, but I love it there."
+    },
+    "150": {
+        "ru": "Кажется, последний раз я там был лет 5 назад. На входе стоял ларек с потрясающими корн-догами.",
+        "choices": [
+            "151"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "I think the last time I was there was about five years ago. There was a stand at the entrance with some amazing corn dogs."
+    },
+    "151": {
+        "ru": "Он и сейчас там) Составишь компанию?",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "It's still there, will you keep me company?"
+    },
+    "152": {
+        "ru": "Так, если у нас романтический вечер намечается, то давай начнем его с похода в кино?",
+        "choices": [
+            "153"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Okay, if we're going on a romantic date, why don't we start with a movie?"
+    },
+    "153": {
+        "ru": "Романтический? Последний ряд в кино наш?",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "A romantic one? So the last row is ours?"
+    },
+    "154": {
+        "ru": "Весь? Звучит прикольно, я подумаю.",
+        "choices": [
+            "155"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "All of it? Sounds fun, I'll think about it."
+    },
+    "155": {
+        "ru": "Что?",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "What?"
+    },
+    "156": {
+        "ru": null,
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": "CAACAgIAAxkBAAMeY1vA75-__kKAxdZ9n6Rtr8BHmqoAAlQfAAIUoNBKLIEgLJPZu_0qBA",
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": null
+    },
+    "157": {
+        "ru": "...",
+        "choices": [
+            "158"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": 1.0,
+        "voice": null,
+        "event": null,
+        "text": "..."
+    },
+    "158": {
+        "ru": "Ахах)) Удиви меня 👻",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Hahah:) Surprise me👻"
+    },
+    "159": {
+        "ru": "Ну как, градус доверия между нами повысился?",
+        "choices": [
+            "160"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Has the level of trust between us improved?"
+    },
+    "160": {
+        "ru": "Не только доверия))",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Not just the lever of trust:)"
+    },
+    "161": {
+        "ru": "Какой интересный поворот.. Мне нравится)",
+        "choices": [
+            "162"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "What an interesting twist.... I like it:)"
+    },
+    "162": {
+        "ru": "Любопытно, почему твой босс мной заинтересовался?",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "I wonder why your boss is interested in me."
+    },
+    "163": {
+        "ru": "Провоцируешь?",
+        "choices": [
+            "164"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Are you being provocative?"
+    },
+    "164": {
+        "ru": "Немного🌶",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Just a little bit🌶"
+    },
+    "165": {
+        "ru": "Он видел твои фото в профиле и отреагировал, как любой нормальный мужчина на его месте.",
+        "choices": [
+            "166"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "He saw your profile picture and reacted like any normal man in his position would."
+    },
+    "166": {
+        "ru": "А ты? Тебе понравилось рассматривать мои фото?",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "What about you? Did you enjoy looking at my pictures?"
+    },
+    "167": {
+        "ru": "Прекращай.",
+        "choices": [
+            "168"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Stop it."
+    },
+    "168": {
+        "ru": "Ну же) Мне хочется пошалить. Неужели дело только в нашей болтовне?",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Come on:) I feel like fooling around. Is it really about us talking?"
+    },
+    "169": {
+        "ru": "Конечно нет.",
+        "choices": [
+            "170"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Of course it's not."
+    },
+    "170": {
+        "ru": "Видел те, что на пляже? Это Канкун, прошлым летом. Было так жарко, что приходилось ходить голой в номере отеля.",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Did you see the ones on the beach? That's Cancun, last summer. It was so hot I had to walk around the hotel room naked."
+    },
+    "171": {
+        "ru": "Продолжай.",
+        "choices": [
+            "172"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Go on."
+    },
+    "172": {
+        "ru": "А вечером я брала коктейль и выходила на балкон, чтобы танцевать в свете рекламных биллбордов под музыку из соседнего бара.",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "And at night I'd grab a cocktail and go out on the balcony and dance by the light of the billboards to the music from the bar next door."
+    },
+    "173": {
+        "ru": "Хочу оказаться там с тобой.",
+        "choices": [
+            "174"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "I want to be there with you."
+    },
+    "174": {
+        "ru": "Пару раз мне даже свистели и хлопали с улицы) Такая свобода 🔥",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "A couple of times I even got whistled at and clapped from the street:) Such a freedom 🔥"
+    },
+    "175": {
+        "ru": "Ну что ты со мной делаешь?",
+        "choices": [
+            "176"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "What are you doing to me?"
+    },
+    "176": {
+        "ru": "И что же?",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "So what?"
+    },
+    "177": {
+        "ru": null,
+        "choices": [
+            "178"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": "kirushaprosti.jpg",
+        "delay": 2.0,
+        "voice": null,
+        "event": null,
+        "text": null
+    },
+    "178": {
+        "ru": "Бесстыжий.",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Shameless."
+    },
+    "179": {
+        "ru": "Смутил?",
+        "choices": [
+            "180"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Got you embarassed?"
+    },
+    "180": {
+        "ru": "Нет, я же не ребёнок) Скорее бы вечер.",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "No, I'm not a child:) I can't wait for tonight."
+    },
+    "181": {
+        "ru": "И кто из нас более бесстыжий?",
+        "choices": [
+            "182"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Which of us is more shameless?"
+    },
+    "182": {
+        "ru": "Скоро узнаем🕵",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "We'll find out soon."
+    },
+    "183": {
+        "ru": "Ахах)) Весь наш разговор был одним из самых необычных в моей жизни!",
+        "choices": [
+            "184"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Hahaha:)) Our whole conversation was one of the most unusual I've ever had."
+    },
+    "184": {
+        "ru": "Боюсь спрашивать - с кем ты обычно общаешься...",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "I'm afraid to ask: who do you normally hang out with...?"
+    },
+    "185": {
+        "ru": "Ты постепенно познакомишься с большинством из них.",
+        "choices": [
+            "186"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "You'll get to know most of them little by little."
+    },
+    "186": {
+        "ru": "А я смотрю, ты любишь строить далеко идущие планы)",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "And I see you like to make long-term plans:)"
+    },
+    "187": {
+        "ru": "Ну, без этого я бы не стал тем, кто я есть.",
+        "choices": [
+            "188"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "I wouldn't be who I am without it."
+    },
+    "188": {
+        "ru": "Теперь у меня переизбыток пафоса в крови)) А кто ты есть?",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Now I have too much pathos in my blood:) Who are you?"
+    },
+    "189": {
+        "ru": "Подожди немного и увидишь😇",
+        "choices": [
+            "190"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Wait a bit and you'll see😇"
+    },
+    "190": {
+        "ru": "Ага, только \"после всего, что между нами было\" я ведь даже не знаю, как тебя зовут 😅",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Yeah, only \"after everything that's happened between us\" I don't even know your name 😅"
+    },
+    "191": {
+        "ru": "Даниэль. Мой ассистент заберет тебя сегодня вечером.",
+        "choices": [
+            "192"
+        ],
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "Danielle. My assistant will pick you up tonight."
+    },
+    "192": {
+        "ru": "А.. Что? Какой ассистент?",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "А... What? What assistant?"
+    },
+    "193": {
+        "ru": "Тот, что на фотке в профиле. До встречи, принцесса)",
+        "choices": null,
+        "choices_param": null,
+        "jump_id": null,
+        "sticker": null,
+        "photo": null,
+        "delay": null,
+        "voice": null,
+        "event": null,
+        "text": "The one in the profile picture. See you later, princess:)"
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "431889486": {
+        "last_received_message_id": "171",
+        "derzost": -2,
+        "registered_answers": [
+            {
+                "text": "And at night I'd grab a cocktail and go out on the balcony and dance by the light of the billboards to the music from the bar next door.",
+                "next_id": "173",
+                "on_choice": null
+            }
+        ]
+    },
+    "871840722": {
+        "last_received_message_id": "1",
+        "derzost": 0,
+        "registered_answers": [
+            {
+                "text": "Hey:)",
+                "next_id": "3",
+                "on_choice": null
+            }
+        ]
+    }
+}
