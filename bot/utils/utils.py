@@ -1,13 +1,14 @@
 from aiogram import Dispatcher
 from utils.commands import set_bot_commands
 from storage.storage import load_data, save_data
-from handlers import echo
+from handlers import echo, back_to_root_bot
 
 
 async def on_startup(dp: Dispatcher):
     await set_bot_commands(dp)
     dp.data["dialogs"] = load_data("dialogs")
     dp.data["users"] = load_data("users")
+    dp.register_message_handler(back_to_root_bot, commands=["back"])
     dp.register_message_handler(echo)
 
 

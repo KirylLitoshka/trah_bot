@@ -31,5 +31,29 @@ async def echo(message: types.Message):
     try:
         await sending_messages_till_answer(dispatcher, current_user, user_id, next_dialog_id)
     except KeyError:
-        # Концовка (переделать, т.к выходит до отправки последнего сообщения)
+        await back_to_root_bot(message, finish=True)
         return
+
+
+async def back_to_root_bot(message: types.Message, finish: bool = None):
+    msg = "Больше историй ждет тебя в @el_patrona_bot 💋"
+    inline_keyboard = types.InlineKeyboardMarkup(
+        row_width=1,
+        inline_keyboard=[
+            [
+                types.InlineKeyboardButton(
+                    text="📚  Перейти в каталог историй",
+                    url="https://t.me/el_patrona_bot",
+                )
+            ]
+        ],
+    )
+    if finish:
+        msg = "Cпасибо за прочтение!\n" + msg
+        inline_keyboard.add(
+            types.InlineKeyboardButton("Начать историю сначала", callback_data="test")
+        )
+    await message.answer(
+        text=msg,
+        reply_markup=inline_keyboard,
+    )
