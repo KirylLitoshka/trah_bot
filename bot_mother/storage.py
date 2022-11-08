@@ -1,6 +1,6 @@
 import json
 
-from settings import STORAGE_DIR
+from bot_mother.settings import STORAGE_DIR
 
 
 def set_users(dispatcher):

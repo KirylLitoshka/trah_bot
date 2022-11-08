@@ -1,8 +1,9 @@
 from aiogram import Bot, Dispatcher, executor
-from commands import set_bot_commands
-from handlers import (gender_selection, menu, novel_selection,
-                      picture_type_selection)
-from storage import set_users
+
+from bot_mother.commands import set_bot_commands
+from bot_mother.handlers import (gender_selection, menu, novel_selection,
+                                 picture_type_selection)
+from bot_mother.storage import set_users
 
 
 async def on_startup(dp: Dispatcher):

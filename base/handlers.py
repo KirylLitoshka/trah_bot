@@ -1,15 +1,11 @@
-from aiogram import types, Dispatcher
-from utils.messages import sending_messages_till_answer
-from utils.choices import on_choice_action
+from aiogram import Dispatcher, types
+
+from base.utils.choices import on_choice_action
+from base.utils.messages import sending_messages_till_answer
 
 
 async def create_new_user(dp_data, user_id):
-    dp_data["users"][user_id] = {
-        "last_received_message_id": None,
-        "keks": 0,
-        "loc": None,
-        "registered_answers": [{"text": "/start", "next_id": "0", "on_choice": None}],
-    }
+    dp_data["users"][user_id] = dp_data["default_user_model"].copy()
 
 
 async def echo(message: types.Message):
@@ -30,7 +26,6 @@ async def echo(message: types.Message):
         on_choice_action(current_user, on_choice_expression)
     next_dialog_id = possible_answers[choice_index]["next_id"]
     current_user["last_received_message_id"] = next_dialog_id
-    print(current_user["last_received_message_id"])
     try:
         await sending_messages_till_answer(dispatcher, current_user, user_id, next_dialog_id)
     except KeyError:
@@ -54,17 +49,9 @@ async def back_to_root_bot(message: types.Message, finish: bool = None):
     if finish:
         msg = "Cпасибо за прочтение!\n" + msg
         inline_keyboard.add(
-            types.InlineKeyboardButton("Начать историю сначала", callback_data="restart")
+            types.InlineKeyboardButton("Начать историю сначала", callback_data="test")
         )
     await message.answer(
         text=msg,
         reply_markup=inline_keyboard,
     )
-
-
-async def restart(query: types.CallbackQuery):
-    user_id = str(query.from_user.id)
-    dispatcher = Dispatcher.get_current()
-    await create_new_user(dispatcher.data, user_id)
-    current_user = dispatcher.data["users"][user_id]
-    await sending_messages_till_answer(dispatcher, current_user, user_id, "0")

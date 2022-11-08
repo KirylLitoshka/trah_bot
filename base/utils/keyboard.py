@@ -1,6 +1,8 @@
 from aiogram import Dispatcher
-from aiogram.types import ReplyKeyboardMarkup, ReplyKeyboardRemove, KeyboardButton
-from utils.choices import check_args
+from aiogram.types import (KeyboardButton, ReplyKeyboardMarkup,
+                           ReplyKeyboardRemove)
+
+from base.utils.choices import check_args
 
 
 def reply_keyboard(user, message_args):
@@ -8,7 +10,10 @@ def reply_keyboard(user, message_args):
     if not message_args["choices"]:
         return ReplyKeyboardRemove()
     else:
-        keyboard = ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True)
+        keyboard = ReplyKeyboardMarkup(
+            resize_keyboard=True,
+            one_time_keyboard=True
+        )
         user_answers = []
         for index, choice in enumerate(message_args["choices"]):
             if message_args["choices_param"]:
