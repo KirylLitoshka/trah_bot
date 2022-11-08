@@ -5,7 +5,7 @@ from bot_bruna.setting import DEFAULT_USER_MODEL, STORAGE_DIRS
 
 
 def main():
-    bot = Bot("5735361805:AAHG8TBTPEIqKevTS3TsUsX9gWOr-HGP8vs")
+    bot = Bot("")
     dispatcher = Dispatcher(bot)
     executor.start_polling(
         dispatcher=dispatcher,

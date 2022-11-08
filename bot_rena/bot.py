@@ -5,7 +5,7 @@ from bot_rena.setting import DEFAULT_USER_MODEL, STORAGE_DIRS
 
 
 def main():
-    bot = Bot("5712278473:AAHEc7mG4LzyEESR0A2Jls88BToSI1Y6UH0")
+    bot = Bot("")
     dispatcher = Dispatcher(bot)
     executor.start_polling(
         dispatcher=dispatcher,

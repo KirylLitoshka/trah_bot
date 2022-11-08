@@ -5,7 +5,7 @@ from bot_daniel.setting import DEFAULT_USER_MODEL, STORAGE_DIRS
 
 
 def main():
-    bot = Bot("5585358026:AAFZ_MdfbBW70b2Ds9QdtqBXfLmHI1cjBb4")
+    bot = Bot("")
     dispatcher = Dispatcher(bot)
     executor.start_polling(
         dispatcher=dispatcher,

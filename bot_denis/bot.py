@@ -5,7 +5,7 @@ from bot_denis.setting import DEFAULT_USER_MODEL, STORAGE_DIRS
 
 
 def main():
-    bot = Bot("5673471591:AAGs9ztr7LGRjQ64tjE5YxqgVb7EgESAyh8")
+    bot = Bot("")
     dispatcher = Dispatcher(bot)
     executor.start_polling(
         dispatcher=dispatcher,
