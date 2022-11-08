@@ -14,7 +14,7 @@ menu = {
         "female": {
             "real": "https://t.me/denise_el_patrona_bot",
             "photo": "https://t.me/bruna_el_patrona_bot",
-            "anime": "https://t.me/TestCucumber2Bot"
+            "anime": "https://t.me/rena_el_patrona_bot"
         },
         "male": {
             "real": "https://t.me/danielle_el_patrona_bot",
