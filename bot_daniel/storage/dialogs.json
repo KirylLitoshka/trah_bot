@@ -794,7 +794,7 @@
         "text": "Sorry, I have a call. I'm afraid it's going to take a while."
     },
     "58": {
-        "ru": "Пользователь появился в сети...",
+        "ru": "<i>Пользователь появился в сети...</i>",
         "choices": [
             "59",
             "66"
@@ -815,7 +815,7 @@
         "delay": 120.0,
         "voice": null,
         "event": null,
-        "text": "This user is online..."
+        "text": "<i>This user is online...</i>"
     },
     "59": {
         "ru": "Думаешь, я поверила?",
@@ -1233,7 +1233,7 @@
         "delay": null,
         "voice": null,
         "event": null,
-        "text": "Wow..."
+        "text": "Wow... Are you sure you're a psychologist?"
     },
     "91": {
         "ru": "Обожаю тебя))",
@@ -1314,7 +1314,7 @@
         "text": "I remember we started the conversation with your boss being high or something."
     },
     "97": {
-        "ru": "Пользователь вышел из сети...",
+        "ru": "<i>Пользователь вышел из сети...</i>",
         "choices": [
             "98"
         ],
@@ -1325,7 +1325,7 @@
         "delay": null,
         "voice": null,
         "event": null,
-        "text": "This user is offline..."
+        "text": "<i>This user is offline...</i>"
     },
     "98": {
         "ru": "Ты куда пропал? Все нормально?",
@@ -1358,7 +1358,7 @@
         "jump_id": null,
         "sticker": null,
         "photo": null,
-        "delay": 30.0,
+        "delay": 5.0,
         "voice": null,
         "event": null,
         "text": "No."
@@ -2331,7 +2331,7 @@
         "delay": null,
         "voice": null,
         "event": null,
-        "text": "And at night I'd grab a cocktail and go out on the balcony and dance by the light of the billboards to the music from the bar next door."
+        "text": "And at night I'd grab a cocktail and go out on the balcony and dance to the music from the bar next door."
     },
     "173": {
         "ru": "Хочу оказаться там с тобой.",

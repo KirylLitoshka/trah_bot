@@ -12,14 +12,14 @@ menu = {
     },
     "novels": {
         "female": {
-            "real": "https://t.me/TestCucumber2Bot",
-            "photo": "https://t.me/TestCucumber2Bot",
+            "real": "https://t.me/denise_el_patrona_bot",
+            "photo": "https://t.me/bruna_el_patrona_bot",
             "anime": "https://t.me/TestCucumber2Bot"
         },
         "male": {
-            "real": "https://t.me/TestCucumberBot",
-            "photo": "https://t.me/TestCucumberBot",
-            "anime": "https://t.me/TestCucumberBot"
+            "real": "https://t.me/danielle_el_patrona_bot",
+            "photo": "https://t.me/danielle_el_patrona_bot",
+            "anime": "https://t.me/danielle_el_patrona_bot"
         }
     }
 }
