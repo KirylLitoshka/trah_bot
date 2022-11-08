@@ -1,30 +1,4 @@
-import pathlib
-import json
-import os
-from aiogram import Dispatcher, Bot, executor, types
-
-STORAGE_DIR = os.path.join(pathlib.Path(__file__).parent, "storage")
-
-
-async def on_startup(dp: Dispatcher):
-    with open(f"{STORAGE_DIR}/users.json", mode="r", encoding="utf8") as user_storage:
-        users_data = json.loads(user_storage.read())
-        dp.data['users'] = users_data
-
-    await dp.bot.set_my_commands(
-        [
-            types.BotCommand("start", "💟 Перезапустить бота")
-        ]
-    )
-    dp.register_message_handler(gender_selection, commands=["start"])
-    dp.register_message_handler(picture_type_selection, lambda msg: msg.text in menu["gender"].values())
-    dp.register_message_handler(novel_selection, lambda msg: msg.text in menu["picture_type"].values())
-
-
-async def on_shutdown(dp: Dispatcher):
-    dp.stop_polling()
-    await dp.wait_closed()
-
+from aiogram import Bot, Dispatcher, types
 
 menu = {
     "gender": {
@@ -81,7 +55,8 @@ async def picture_type_selection(message: types.Message):
     user_id = str(message.from_user.id)
     if message.text not in menu[users[user_id]["current_choices"]].values():
         await Bot.get_current().delete_message(message.chat.id, message.message_id)
-    users[user_id]["gender"] = next((key for key, val in menu["gender"].items() if val == message.text), None)
+    users[user_id]["gender"] = next(
+        (key for key, val in menu["gender"].items() if val == message.text), None)
     users[user_id]["current_choices"] = "picture_type"
     await message.answer(
         text="Выберите визуальный стиль изображений в истории.\n\n"
@@ -105,12 +80,15 @@ async def novel_selection(message: types.Message):
     current_user = users[user_id]
     if message.text not in menu[users[user_id]["current_choices"]].values():
         await Bot.get_current().delete_message(message.chat.id, message.message_id)
-    current_user["picture_type"] = next((key for key, val in menu["picture_type"].items() if val == message.text), None)
+    current_user["picture_type"] = next(
+        (key for key, val in menu["picture_type"].items() if val == message.text), None)
     current_user["current_choices"] = "novels"
-    novel_link = menu["novels"][current_user["gender"]][current_user["picture_type"]]
+    novel_link = menu["novels"][current_user["gender"]
+                                ][current_user["picture_type"]]
     await message.answer(
         text="Твой собеседник уже ждет тебя в чате.\nПереходи по ссылке",
-        reply_markup=types.InlineKeyboardMarkup().add(types.InlineKeyboardButton("Начать общение", url=novel_link))
+        reply_markup=types.InlineKeyboardMarkup().add(
+            types.InlineKeyboardButton("Начать общение", url=novel_link))
     )
 
 
@@ -121,18 +99,3 @@ async def restart(message: types.Message):
         await gender_selection(message)
     except KeyError:
         await gender_selection(message)
-
-
-def main():
-    bot = Bot("5767674258:AAHmpIMRYeEFupfYt9M553DoP2GTXgLRJh8")
-    dispatcher = Dispatcher(bot)
-    executor.start_polling(
-        dispatcher=dispatcher,
-        on_startup=on_startup,
-        on_shutdown=on_shutdown,
-        skip_updates=True
-    )
-
-
-if __name__ == "__main__":
-    main()
