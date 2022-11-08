@@ -62,9 +62,14 @@ async def send_message(dispatcher, user: dict, user_id: str, message_args: dict)
             reply_markup=reply_keyboard(user, message_args),
         )
     elif message_args["text"]:
+        msg = message_args["text"]
+        if "*" in msg:
+            print(f"* in {msg:}")
+            msg = msg.replace("*", user["username"])
         await bot.send_message(
             chat_id=user_id,
-            text=message_args["text"],
+            text=msg,
+            parse_mode="HTML",
             reply_markup=reply_keyboard(user, message_args),
         )
     else:

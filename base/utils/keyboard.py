@@ -21,7 +21,10 @@ def reply_keyboard(user, message_args):
                 if not check_args(user, args_for_checking):
                     continue
             choice_message = dialogs[choice]
-            keyboard.add(KeyboardButton(choice_message["text"]))
+            msg = choice_message["text"]
+            if "*" in msg:
+                msg = msg.replace("*", user["username"])
+            keyboard.add(KeyboardButton(msg))
             next_id = choice_message.get("jump_id") or str(int(choice) + 1)
             on_choice = None
             if choice_message["choices"]:
@@ -34,7 +37,7 @@ def reply_keyboard(user, message_args):
             if message_args["choices_param"]:
                 on_choice = message_args["choices_param"][index]["on_choice"]
             user_answers.append({
-                "text": choice_message["text"].strip(),
+                "text": msg.strip(),
                 "next_id": next_id,
                 "on_choice": on_choice,
             })

@@ -1,18 +1,18 @@
 from aiogram import Dispatcher, types
-
 from base.utils.choices import on_choice_action
 from base.utils.messages import sending_messages_till_answer
 
 
-async def create_new_user(dp_data, user_id):
+async def create_new_user(dp_data, user_id, username):
     dp_data["users"][user_id] = dp_data["default_user_model"].copy()
+    dp_data["users"][user_id]["username"] = username.title()
 
 
 async def echo(message: types.Message):
     dispatcher = Dispatcher.get_current()
     user_id = str(message.from_user.id)
     if user_id not in dispatcher.data["users"]:
-        await create_new_user(dispatcher.data, user_id)
+        await create_new_user(dispatcher.data, user_id, message.from_user.first_name)
     current_user = dispatcher.data["users"][user_id]
     possible_answers = current_user["registered_answers"]
     answer_texts = [item["text"] for item in possible_answers]
@@ -49,9 +49,17 @@ async def back_to_root_bot(message: types.Message, finish: bool = None):
     if finish:
         msg = "Cпасибо за прочтение!\n" + msg
         inline_keyboard.add(
-            types.InlineKeyboardButton("Начать историю сначала", callback_data="test")
+            types.InlineKeyboardButton("Начать историю сначала", callback_data="restart")
         )
     await message.answer(
         text=msg,
         reply_markup=inline_keyboard,
     )
+
+
+async def restart(query: types.CallbackQuery):
+    user_id = str(query.from_user.id)
+    dispatcher = Dispatcher.get_current()
+    await create_new_user(dispatcher.data, user_id, dispatcher.data["users"][user_id]["username"])
+    current_user = dispatcher.data["users"][user_id]
+    await sending_messages_till_answer(dispatcher, current_user, user_id, "0")

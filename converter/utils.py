@@ -65,6 +65,8 @@ def excel_as_dict(fn):
         xls_data = fn(*args, **kwargs)
         data = {}
         for worksheet_row in list(xls_data.rows)[1:]:
+            if worksheet_row[0].value is None:
+                break
             dialog_id = str(int(worksheet_row[0].value))
             data[dialog_id] = {}
             for col in worksheet_row[1:11]:
