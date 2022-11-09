@@ -3,6 +3,7 @@ import asyncio
 from aiogram.types import InputFile, MediaGroup
 
 from base.utils.keyboard import reply_keyboard
+from base.utils.storage import save_user
 
 
 async def sending_messages_till_answer(dispatcher, user, user_id, next_message_id):
@@ -74,3 +75,4 @@ async def send_message(dispatcher, user: dict, user_id: str, message_args: dict)
         )
     else:
         print("CHECK MESSAGE TYPE!")  # replace with Exception
+    await save_user(dispatcher, user_id, user)

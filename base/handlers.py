@@ -1,10 +1,13 @@
 from aiogram import Dispatcher, types
+
 from base.utils.choices import on_choice_action
 from base.utils.messages import sending_messages_till_answer
+from base.utils.storage import save_user
 
 
 async def create_new_user(dp_data, user_id, username):
     dp_data["users"][user_id] = dp_data["default_user_model"].copy()
+    dp_data["users"][user_id]["id"] = user_id
     dp_data["users"][user_id]["username"] = username.title()
 
 
