@@ -2,7 +2,6 @@ from aiogram import Dispatcher, types
 
 from base.utils.choices import on_choice_action
 from base.utils.messages import sending_messages_till_answer
-from base.utils.storage import save_user
 
 
 async def create_new_user(dp_data, user_id, username):
@@ -10,9 +9,9 @@ async def create_new_user(dp_data, user_id, username):
     dp_data["users"][user_id].update({
         "id": user_id,
         "username": username.title(),
-        "complete_reads_counter": dp_data["users"][user_id].get("complete_reads_counter", 0)
+        "complete_reads_counter": dp_data["users"][user_id].get("complete_reads_counter", 0),
+        "referral_type": dp_data["users"][user_id].get("referral_type")
     })
-    
 
 
 async def echo(message: types.Message):
@@ -20,6 +19,10 @@ async def echo(message: types.Message):
     user_id = str(message.from_user.id)
     if user_id not in dispatcher.data["users"]:
         await create_new_user(dispatcher.data, user_id, message.from_user.first_name)
+        if len(message.text.split()) != 1:
+            if message.text.startswith("/start"):
+                dispatcher.data["users"][user_id]["referral_type"] = message.text.split()[1]
+                message.text = message.text.split()[0]
     current_user = dispatcher.data["users"][user_id]
     possible_answers = current_user["registered_answers"]
     answer_texts = [item["text"] for item in possible_answers]
