@@ -5,9 +5,12 @@ import aiofiles
 
 
 def load_users(storage_dir: str):
-    users_storage = os.path.join(storage_dir, "users")
-    *_, users_files = list(*os.walk(users_storage))
     users_data = {}
+    users_storage = os.path.join(storage_dir, "users")
+    if not os.path.exists(users_storage):
+        os.mkdir(users_storage)
+        return users_data
+    *_, users_files = list(*os.walk(users_storage))
     if not users_files:
         return users_data
     for user_file_name in users_files:
