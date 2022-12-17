@@ -1,6 +1,6 @@
 from aiogram import Dispatcher
 
-from base.handlers import back_to_root_bot, echo, restart
+from base.handlers import back_to_root_bot, echo, restart, switch_language, choose_language
 from base.utils.commands import set_bot_commands
 from base.utils.storage import load_dialogs, load_users
 
@@ -14,6 +14,8 @@ def on_startup(dirs, user_model):
         dp.data["default_user_model"] = user_model
         dp.register_callback_query_handler(restart, lambda cmd: cmd.data == "restart")
         dp.register_message_handler(back_to_root_bot, commands=["back"])
+        dp.register_message_handler(choose_language, commands=["language"])
+        dp.register_callback_query_handler(switch_language, lambda msg: msg.data == "ru" or msg.data == "en")
         dp.register_message_handler(echo)
 
     return wrapper

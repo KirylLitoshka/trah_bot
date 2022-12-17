@@ -6,18 +6,12 @@ from base.utils.messages import sending_messages_till_answer
 
 async def create_new_user(dp_data, user_id, username):
     dp_data["users"][user_id] = dp_data["default_user_model"].copy()
-    dp_data["users"][user_id].update({
-        "id": user_id,
-        "username": username.title(),
-        "complete_reads_counter": dp_data["users"][user_id].get("complete_reads_counter", 0),
-        "referral_type": dp_data["users"][user_id].get("referral_type")
-    })
+    dp_data["users"][user_id].update({"id": user_id, "username": username.title()})
 
 
 async def echo(message: types.Message):
     dispatcher = Dispatcher.get_current()
     user_id = str(message.from_user.id)
-    print(message.from_user.language_code)
     if user_id not in dispatcher.data["users"]:
         await create_new_user(dispatcher.data, user_id, message.from_user.first_name)
         if len(message.text.split()) != 1:
@@ -40,11 +34,11 @@ async def echo(message: types.Message):
         on_choice_action(current_user, on_choice_expression)
     next_dialog_id = possible_answers[choice_index]["next_id"]
     current_user["last_received_message_id"] = next_dialog_id
-    # try:
-    await sending_messages_till_answer(dispatcher, current_user, user_id, next_dialog_id)
-    # except KeyError:
-    #     print("key error")
-    #     return await back_to_root_bot(message, finish=True)
+    try:
+        await sending_messages_till_answer(dispatcher, current_user, user_id, next_dialog_id)
+    except KeyError:
+        print("key error")
+        return await back_to_root_bot(message, finish=True)
 
 
 async def back_to_root_bot(message: types.Message, finish: bool = None):
@@ -71,10 +65,36 @@ async def back_to_root_bot(message: types.Message, finish: bool = None):
     )
 
 
+async def choose_language(message: types.Message):
+    await message.answer(
+        text="Choose your language",
+        reply_markup=types.InlineKeyboardMarkup(
+            inline_keyboard=[[
+                types.InlineKeyboardButton("RU", callback_data="ru"),
+                types.InlineKeyboardButton("EN", callback_data="en")
+            ]]
+        )
+    )
+
+
+async def switch_language(query: types.CallbackQuery):
+    user_id = str(query.from_user.id)
+    current_user = Dispatcher.get_current().data["users"][user_id]
+    current_user["language"] = query.data
+    await query.message.answer("Success!")
+    await restart(query)
+
+
 async def restart(query: types.CallbackQuery):
     user_id = str(query.from_user.id)
     dispatcher = Dispatcher.get_current()
+    complete_reads_counter = dispatcher["users"][user_id].get("complete_reads_counter", 0)
+    referral_type = dispatcher["users"][user_id].get("referral_type")
+    language = dispatcher["users"][user_id].get("language")
     await create_new_user(dispatcher.data, user_id, dispatcher.data["users"][user_id]["username"])
+    if query.data == "restart":
+        dispatcher.data["users"][user_id]["complete_reads_counter"] = complete_reads_counter + 1
     current_user = dispatcher.data["users"][user_id]
-    current_user["complete_reads_counter"] += 1
+    current_user["referral_type"] = referral_type
+    current_user["language"] = language
     await sending_messages_till_answer(dispatcher, current_user, user_id, "0")
