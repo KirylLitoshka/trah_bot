@@ -58,7 +58,7 @@ def excel_as_dict(fn):
         "delay",
         "voice",
         "event",
-        "text"
+        "en"
     ]
 
     def wrapper(*args, **kwargs):
