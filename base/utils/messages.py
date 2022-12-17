@@ -28,6 +28,7 @@ async def sending_messages_till_answer(dispatcher, user, user_id, next_message_i
 
 async def send_message(dispatcher, user: dict, user_id: str, message_args: dict):
     bot = dispatcher.bot
+    user_language = user['language']
     if message_args["delay"]:
         await asyncio.sleep(message_args["delay"])
     if message_args["photo"]:
@@ -37,7 +38,7 @@ async def send_message(dispatcher, user: dict, user_id: str, message_args: dict)
             await bot.send_photo(
                 chat_id=user_id,
                 photo=InputFile(f'{img_dir}/{message_args["photo"]}'),
-                caption=message_args["text"],
+                caption=message_args[user_language],
                 reply_markup=reply_keyboard(user, message_args),
             )
         else:
@@ -59,13 +60,12 @@ async def send_message(dispatcher, user: dict, user_id: str, message_args: dict)
         await bot.send_voice(
             chat_id=user_id,
             voice=InputFile(f"{media_dir}/{message_args['voice']}"),
-            caption=message_args["text"],
+            caption=message_args[user_language],
             reply_markup=reply_keyboard(user, message_args),
         )
-    elif message_args["text"]:
-        msg = message_args["text"]
+    elif message_args[user_language]:
+        msg = message_args[user_language]
         if "*" in msg:
-            print(f"* in {msg:}")
             msg = msg.replace("*", user["username"])
         await bot.send_message(
             chat_id=user_id,

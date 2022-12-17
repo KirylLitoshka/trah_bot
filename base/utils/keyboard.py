@@ -7,6 +7,7 @@ from base.utils.choices import check_args
 
 def reply_keyboard(user, message_args):
     dialogs = Dispatcher.get_current().data["dialogs"]
+    user_language = user["language"]
     if not message_args["choices"]:
         return ReplyKeyboardRemove()
     else:
@@ -21,7 +22,7 @@ def reply_keyboard(user, message_args):
                 if not check_args(user, args_for_checking):
                     continue
             choice_message = dialogs[choice]
-            msg = choice_message["text"]
+            msg = choice_message[user_language]
             if "*" in msg:
                 msg = msg.replace("*", user["username"])
             keyboard.add(KeyboardButton(msg))

@@ -17,18 +17,22 @@ async def create_new_user(dp_data, user_id, username):
 async def echo(message: types.Message):
     dispatcher = Dispatcher.get_current()
     user_id = str(message.from_user.id)
+    print(message.from_user.language_code)
     if user_id not in dispatcher.data["users"]:
         await create_new_user(dispatcher.data, user_id, message.from_user.first_name)
         if len(message.text.split()) != 1:
             if message.text.startswith("/start"):
                 dispatcher.data["users"][user_id]["referral_type"] = message.text.split()[1]
                 message.text = message.text.split()[0]
+        if message.from_user.language_code == "ru":
+            dispatcher.data['users'][user_id]["language"] = "ru"
+        else:
+            dispatcher.data['users'][user_id]["language"] = "en"
     current_user = dispatcher.data["users"][user_id]
     possible_answers = current_user["registered_answers"]
     answer_texts = [item["text"] for item in possible_answers]
     if message.text not in answer_texts:
-        await dispatcher.bot.delete_message(message.chat.id, message.message_id)
-        return
+        return await dispatcher.bot.delete_message(message.chat.id, message.message_id)
     current_user["registered_answers"] = []
     choice_index = answer_texts.index(message.text)
     if possible_answers[choice_index]["on_choice"]:
@@ -36,11 +40,11 @@ async def echo(message: types.Message):
         on_choice_action(current_user, on_choice_expression)
     next_dialog_id = possible_answers[choice_index]["next_id"]
     current_user["last_received_message_id"] = next_dialog_id
-    try:
-        await sending_messages_till_answer(dispatcher, current_user, user_id, next_dialog_id)
-    except KeyError:
-        await back_to_root_bot(message, finish=True)
-        return
+    # try:
+    await sending_messages_till_answer(dispatcher, current_user, user_id, next_dialog_id)
+    # except KeyError:
+    #     print("key error")
+    #     return await back_to_root_bot(message, finish=True)
 
 
 async def back_to_root_bot(message: types.Message, finish: bool = None):
