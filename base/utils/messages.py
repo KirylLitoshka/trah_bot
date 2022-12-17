@@ -1,9 +1,20 @@
 import asyncio
 
-from aiogram.types import InputFile, MediaGroup
+from aiogram.types import InputFile, MediaGroup, ChatActions
 
 from base.utils.keyboard import reply_keyboard
 from base.utils.storage import save_user
+
+
+def get_chat_action(message_args):
+    if message_args["photo"]:
+        return ChatActions.UPLOAD_PHOTO
+    elif message_args["sticker"]:
+        return ChatActions.CHOOSE_STICKER
+    elif message_args["voice"]:
+        return ChatActions.UPLOAD_VOICE
+    elif message_args["en"]:
+        return ChatActions.TYPING
 
 
 async def sending_messages_till_answer(dispatcher, user, user_id, next_message_id):
@@ -30,7 +41,13 @@ async def send_message(dispatcher, user: dict, user_id: str, message_args: dict)
     bot = dispatcher.bot
     user_language = user['language']
     if message_args["delay"]:
-        await asyncio.sleep(message_args["delay"])
+        wait_time = message_args["delay"]
+        chat_action = get_chat_action(message_args)
+        if wait_time > 10:
+            await asyncio.sleep(wait_time - 2)
+            wait_time = 2
+        await bot.send_chat_action(user_id, chat_action)
+        await asyncio.sleep(wait_time)
     if message_args["photo"]:
         img_dir = dispatcher.data["dirs"]["IMAGES_DIR"]
         photo_gallery = message_args["photo"].split("%")
