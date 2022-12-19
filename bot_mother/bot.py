@@ -1,23 +1,22 @@
 from aiogram import Bot, Dispatcher, executor
+from aiogram.contrib.fsm_storage.files import JSONStorage
 
 from bot_mother.commands import set_bot_commands
-from bot_mother.handlers import (gender_selection, menu, novel_selection,
-                                 picture_type_selection)
-from bot_mother.storage import set_users
+from bot_mother.handlers import start, restart, process_gender, process_novel_link, change_language, \
+    change_user_language
+from bot_mother.profile import User
+from bot_mother.settings import STORAGE_DIR
 
 
 async def on_startup(dp: Dispatcher):
     await set_bot_commands(dp)
-    set_users(dispatcher=dp)
-    dp.register_message_handler(gender_selection, commands=["start"])
-    dp.register_message_handler(
-        picture_type_selection,
-        lambda msg: msg.text in menu["gender"].values()
-    )
-    dp.register_message_handler(
-        novel_selection,
-        lambda msg: msg.text in menu["picture_type"].values()
-    )
+    dp.register_message_handler(start, commands=["start"])
+    dp.register_message_handler(restart, commands=["restart"], state="*")
+    dp.register_message_handler(change_language, commands=["language"], state="*")
+    dp.register_callback_query_handler(
+        change_user_language, lambda msg: msg.data == "ru" or msg.data == "en", state="*")
+    dp.register_message_handler(process_gender, state=User.gender)
+    dp.register_message_handler(process_novel_link, state=User.bot_type)
 
 
 async def on_shutdown(dp: Dispatcher):
@@ -26,8 +25,8 @@ async def on_shutdown(dp: Dispatcher):
 
 
 def main():
-    bot = Bot("5767674258:AAHmpIMRYeEFupfYt9M553DoP2GTXgLRJh8")
-    dispatcher = Dispatcher(bot)
+    bot = Bot("")
+    dispatcher = Dispatcher(bot, storage=JSONStorage(STORAGE_DIR))
     executor.start_polling(
         dispatcher=dispatcher,
         on_startup=on_startup,

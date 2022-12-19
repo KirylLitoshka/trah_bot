@@ -1,48 +1,27 @@
-from aiogram import Bot, Dispatcher, types
-
-menu = {
-    "gender": {
-        "male": "💁‍♂️ Парни",
-        "female": "💁‍♀️ Девушки"
-    },
-    "picture_type": {
-        "real": "💋 Реалистичные 2D арты",
-        "photo": "📸 Фотографии",
-        "anime": "🍭 Аниме 2D арты"
-    },
-    "novels": {
-        "female": {
-            "real": "https://t.me/denise_el_patrona_bot?start=user_from_motherbot",
-            "photo": "https://t.me/bruna_el_patrona_bot?start=user_from_motherbot",
-            "anime": "https://t.me/rena_el_patrona_bot?start=user_from_motherbot"
-        },
-        "male": {
-            "real": "https://t.me/danielle_el_patrona_bot?start=user_from_motherbot",
-            "photo": "https://t.me/danielle_el_patrona_bot?start=user_from_motherbot",
-            "anime": "https://t.me/danielle_el_patrona_bot?start=user_from_motherbot"
-        }
-    }
-}
+from aiogram import types
+from aiogram.dispatcher import FSMContext
+from bot_mother.profile import User
+from bot_mother.settings import GENDER_CHOICES, BOT_TYPES, NOVELS_LINK, NOVELS_TEXT
 
 
-async def create_new_user(user_id, users_storage):
-    users_storage[str(user_id)] = {
-        "gender": None,
-        "picture_type": None,
-        "current_choices": "gender"
-    }
-
-
-async def gender_selection(message: types.Message):
-    users = Dispatcher.get_current().data["users"]
-    if message.from_user.id not in users:
-        await create_new_user(message.from_user.id, users)
+async def start(message: types.Message, state: FSMContext):
+    current_state = await state.get_state()
+    if current_state in User.states:
+        return
+    async with state.proxy() as data:
+        if "language" not in data:
+            await User.language.set()
+            user_language = "ru" if message.from_user.language_code == "ru" else "en"
+            data["language"] = user_language
+            await User.next()
+        else:
+            await User.gender.set()
+        user_language = data['language']
     await message.answer(
-        text="С кем ты хочешь начать свой диалог?",
+        text=GENDER_CHOICES[user_language]['text'],
         reply_markup=types.ReplyKeyboardMarkup(
             keyboard=[
-                [types.KeyboardButton("💁‍♂️ Парни")],
-                [types.KeyboardButton("💁‍♀️ Девушки")],
+                [types.KeyboardButton(text)] for text in GENDER_CHOICES[user_language]["buttons"]
             ],
             resize_keyboard=True,
             one_time_keyboard=True
@@ -50,52 +29,75 @@ async def gender_selection(message: types.Message):
     )
 
 
-async def picture_type_selection(message: types.Message):
-    users = Dispatcher.get_current().data["users"]
-    user_id = str(message.from_user.id)
-    if message.text not in menu[users[user_id]["current_choices"]].values():
-        await Bot.get_current().delete_message(message.chat.id, message.message_id)
-    users[user_id]["gender"] = next(
-        (key for key, val in menu["gender"].items() if val == message.text), None)
-    users[user_id]["current_choices"] = "picture_type"
+async def process_gender(message: types.Message, state: FSMContext):
+    if message.text == "/restart":
+        return await restart(message, state)
+    elif message.text == "/language":
+        return await change_language(message)
+    async with state.proxy() as data:
+        user_language = data['language']
+        if message.text not in GENDER_CHOICES[user_language]["buttons"]:
+            return await message.delete()
+        data["gender"] = message.text
+    await User.next()
     await message.answer(
-        text="Выберите визуальный стиль изображений в истории.\n\n"
-             "<i>В наших историях Вы можете увидеть арты и фотографии с контентом сексуального характера 🔞</i>",
-        parse_mode="HTML",
+        text=BOT_TYPES[user_language]["text"],
         reply_markup=types.ReplyKeyboardMarkup(
             keyboard=[
-                [types.KeyboardButton("💋 Реалистичные 2D арты")],
-                [types.KeyboardButton("📸 Фотографии")],
-                [types.KeyboardButton("🍭 Аниме 2D арты")],
+                [types.KeyboardButton(text)] for text in BOT_TYPES[user_language]["buttons"]
             ],
             resize_keyboard=True,
             one_time_keyboard=True
+        ),
+        parse_mode="HTML"
+    )
+
+
+async def process_novel_link(message: types.Message, state: FSMContext):
+    if message.text == "/restart":
+        return await restart(message, state)
+    elif message.text == "/language":
+        return await change_language(message)
+    async with state.proxy() as data:
+        user_language = data['language']
+        if message.text not in BOT_TYPES[user_language]["buttons"]:
+            return await message.delete()
+        data["bot_type"] = message.text
+        link = NOVELS_LINK[user_language][data["gender"]][data["bot_type"]]
+        await message.answer(
+            text=NOVELS_TEXT[user_language]["text"],
+            reply_markup=types.InlineKeyboardMarkup(
+                inline_keyboard=[[
+                    types.InlineKeyboardButton(
+                        text=NOVELS_TEXT[user_language]["link_text"],
+                        url=link
+                    )]]
+            ),
+        )
+    await state.set_state("*")
+
+
+async def change_language(message: types.Message):
+    await message.answer(
+        text="Choose your language",
+        reply_markup=types.InlineKeyboardMarkup(
+            inline_keyboard=[[
+                types.InlineKeyboardButton("RU", callback_data="ru"),
+                types.InlineKeyboardButton("EN", callback_data="en")
+            ]]
         )
     )
 
 
-async def novel_selection(message: types.Message):
-    users = Dispatcher.get_current().data["users"]
-    user_id = str(message.from_user.id)
-    current_user = users[user_id]
-    if message.text not in menu[users[user_id]["current_choices"]].values():
-        await Bot.get_current().delete_message(message.chat.id, message.message_id)
-    current_user["picture_type"] = next(
-        (key for key, val in menu["picture_type"].items() if val == message.text), None)
-    current_user["current_choices"] = "novels"
-    novel_link = menu["novels"][current_user["gender"]
-                                ][current_user["picture_type"]]
-    await message.answer(
-        text="Твой собеседник уже ждет тебя в чате.\nПереходи по ссылке",
-        reply_markup=types.InlineKeyboardMarkup().add(
-            types.InlineKeyboardButton("Начать общение", url=novel_link))
-    )
+async def change_user_language(query: types.CallbackQuery, state: FSMContext):
+    language = query.data
+    async with state.proxy() as data:
+        data['language'] = language
+    await restart(query.message, state)
 
 
-async def restart(message: types.Message):
-    users = Dispatcher.get_current().data["users"]
-    try:
-        del users[str(message.from_user.id)]
-        await gender_selection(message)
-    except KeyError:
-        await gender_selection(message)
+async def restart(message: types.Message, state: FSMContext):
+    current_state = await state.get_state()
+    if current_state is not None:
+        await state.set_state(None)
+    await start(message, state)
