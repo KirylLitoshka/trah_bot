@@ -47,8 +47,8 @@ NOVELS_LINK = {
     "ru": {
         "💁‍♂️ Парни": {
             "💋 Реалистичные 2D арты": "https://t.me/danielle_el_patrona_bot?start=user_from_motherbot",
-            "📸 Фотографии": "https://t.me/danielle_el_patrona_bot?start=user_from_motherbot",
-            "🍭 Аниме 2D арты": "https://t.me/danielle_el_patrona_bot?start=user_from_motherbot"
+            "📸 Фотографии": "https://t.me/James_el_patrona_bot?start=user_from_motherbot",
+            "🍭 Аниме 2D арты": "https://t.me/Minho_el_patrona_bot?start=user_from_motherbot"
         },
         "💁‍♀️ Девушки": {
             "💋 Реалистичные 2D арты": "https://t.me/denise_el_patrona_bot?start=user_from_motherbot",
@@ -59,8 +59,8 @@ NOVELS_LINK = {
     "en": {
         "💁‍♂️ Men": {
             "💋 Realistic 2D art":"https://t.me/danielle_el_patrona_bot?start=user_from_motherbot",
-            "📸 Pictures": "https://t.me/danielle_el_patrona_bot?start=user_from_motherbot",
-            "🍭 2D anime art": "https://t.me/danielle_el_patrona_bot?start=user_from_motherbot"
+            "📸 Pictures": "https://t.me/James_el_patrona_bot?start=user_from_motherbot",
+            "🍭 2D anime art": "https://t.me/Minho_el_patrona_bot?start=user_from_motherbot"
         },
         "💁‍♀️ Women": {
             "💋 Realistic 2D art":"https://t.me/denise_el_patrona_bot?start=user_from_motherbot",
