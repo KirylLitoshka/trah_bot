@@ -42,27 +42,41 @@ async def echo(message: types.Message):
 
 
 async def back_to_root_bot(message: types.Message, finish: bool = None):
-    msg = "Больше историй ждет тебя в @el_patrona_bot 💋"
+    user_id = str(message.from_user.id)
+    user = Dispatcher.get_current().data['users'][user_id]
+    user_language = user["language"]
+    output = {
+        "ru": {
+            "line": "Больше историй ждет тебя в @el_patrona_bot 💋",
+            "line_button": "📚  Перейти в каталог историй",
+            "finish_line": "Cпасибо за прочтение!",
+            "finish_link_button": "Начать историю сначала"
+        },
+        "en": {
+            "line": "Find more stories in @el_patrona_bot💋",
+            "line_button": "📚 Go to the list of stories",
+            "finish_line": "Thanks for reading!",
+            "finish_link_button": "Start story over"
+        }
+    }
+    msg = output[user_language]["line"]
     inline_keyboard = types.InlineKeyboardMarkup(
         row_width=1,
         inline_keyboard=[
             [
                 types.InlineKeyboardButton(
-                    text="📚  Перейти в каталог историй",
+                    text=output[user_language]["line_button"],
                     url="https://t.me/el_patrona_bot",
                 )
             ]
         ],
     )
     if finish:
-        msg = "Cпасибо за прочтение!\n" + msg
+        msg = f"{output[user_language]['finish_line']}\n" + msg
         inline_keyboard.add(
-            types.InlineKeyboardButton("Начать историю сначала", callback_data="restart")
+            types.InlineKeyboardButton(output[user_language]['finish_line_button'], callback_data="restart")
         )
-    await message.answer(
-        text=msg,
-        reply_markup=inline_keyboard,
-    )
+    await message.answer(text=msg, reply_markup=inline_keyboard)
 
 
 async def choose_language(message: types.Message):
