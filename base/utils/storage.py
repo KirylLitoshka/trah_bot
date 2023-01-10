@@ -8,7 +8,7 @@ def load_users(storage_dir: str):
     users_data = {}
     users_storage = os.path.join(storage_dir, "users")
     if not os.path.exists(users_storage):
-        os.mkdir(users_storage)
+        os.makedirs(users_storage)
         return users_data
     *_, users_files = list(*os.walk(users_storage))
     if not users_files:
@@ -21,8 +21,8 @@ def load_users(storage_dir: str):
     return users_data
 
 
-def load_dialogs(dir: str, file_name: str):
-    with open(f"{dir}/{file_name}.json", encoding="utf8") as fp:
+def load_dialogs(dir_name: str, file_name: str):
+    with open(f"{dir_name}/{file_name}.json", encoding="utf8") as fp:
         file_data = fp.read()
         return json.loads(file_data)
 

@@ -2,9 +2,11 @@ from aiogram import types
 from aiogram.dispatcher import FSMContext
 from bot_mother.profile import User
 from bot_mother.settings import GENDER_CHOICES, BOT_TYPES, NOVELS_LINK, NOVELS_TEXT
+from bot_mother.utils import create_new_user
 
 
 async def start(message: types.Message, state: FSMContext):
+    await create_new_user(message)
     current_state = await state.get_state()
     if current_state in User.states:
         return
@@ -74,7 +76,7 @@ async def process_novel_link(message: types.Message, state: FSMContext):
                     )]]
             ),
         )
-    await state.set_state("*")
+    await state.set_state(None)
 
 
 async def change_language(message: types.Message):
